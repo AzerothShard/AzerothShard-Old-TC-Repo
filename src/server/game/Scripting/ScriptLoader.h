@@ -31,5 +31,9 @@ void AddPetScripts();
 void AddBattlegroundScripts();
 void AddOutdoorPvPScripts();
 void AddCustomScripts();
+//[AZTH]
+void AddAzthCustomScripts();
+void AddTcCustomScripts();
+//[AZTH]
 
 #endif

@@ -686,6 +686,17 @@ void AddSC_outdoorpvp_zm();
 void AddSC_chat_log();
 void AddSC_action_ip_logger();
 
+//[AZTH]
+#ifdef AZTH_SCRIPT_MGR_CUSTOM
+void AddSC_azth_commandscript();
+/* This is where custom AzerothShard function scripts declarations should be added. */
+#endif
+
+#ifdef AZTH_SCRIPT_MGR_TC
+/* This is where custom TC function scripts declarations should be added. */
+#endif
+//[AZTH]
+
 #endif
 
 void AddScripts()
@@ -693,6 +704,10 @@ void AddScripts()
     AddSpellScripts();
     AddSC_SmartScripts();
     AddCommandScripts();
+#ifdef AZTH_SCRIPT_MGR
+	AddAzthCustomScripts();
+	/* This is where custom AzerothShard function scripts declarations should be added. */
+#endif
 #ifdef SCRIPTS
     AddWorldScripts();
     AddEasternKingdomsScripts();
@@ -1421,3 +1436,20 @@ void AddCustomScripts()
 
 #endif
 }
+
+//[AZTH]
+void AddAzthCustomScripts()
+{
+#ifdef AZTH_SCRIPT_MGR_CUSTOM
+	AddSC_azth_commandscript();
+	/* This is where custom AzerothShard scripts should be added. */
+#endif
+}
+
+void AddTcCustomScripts()
+{
+#ifdef AZTH_SCRIPT_MGR_TC
+    /* This is where custom TC scripts should be added. */
+#endif
+}
+//[AZTH]

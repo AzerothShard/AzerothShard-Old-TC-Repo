@@ -17,6 +17,8 @@ CTOOLS=0
 # use precompiled headers ( fatest compilation but not optimized if you change headers often )
 CSCRIPTPCH=1
 CCOREPCH=1
+# use AzerothShard Script Manager instead of Trinity's
+CAZTHSCRIPTMGR=0
 
 # absolute root path of your azerothshard repository
 SRCPATH=

@@ -6,8 +6,7 @@ AZTH_SET_PATH("CMAKE_AZTH_SRC_DIR" "${CMAKE_AZTH_DIR}/src/")
 AZTH_SUBDIRLIST(sub_DIRS  "${CMAKE_AZTH_SRC_DIR}/server/" TRUE)
 FOREACH(subdir ${sub_DIRS})
     file(GLOB sources "${subdir}/*.cpp" "${subdir}/*.h")
-
-    set(azth_STAT_SRCS
+	set(azth_STAT_SRCS
         ${azth_STAT_SRCS}
         ${sources}
     )
@@ -135,7 +134,7 @@ MACRO(LOAD_AZTH_MODS)
     target_link_libraries(azth_mod
       game
     )
-
+	
     message(STATUS "AZTH-MODS PREPARATION COMPLETE")
     message("")
 ENDMACRO(LOAD_AZTH_MODS)
