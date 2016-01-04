@@ -31,5 +31,8 @@ void AddPetScripts();
 void AddBattlegroundScripts();
 void AddOutdoorPvPScripts();
 void AddCustomScripts();
+#ifdef AZTH_SCRIPT_MGR
+void AddAzthCustomScripts();
+#endif
 
 #endif

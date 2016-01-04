@@ -78,6 +78,11 @@ void AddSC_ticket_commandscript();
 void AddSC_titles_commandscript();
 void AddSC_wp_commandscript();
 
+#ifdef AZTH_SCRIPT_MGR
+void AddSC_azth_commandscript();
+/* This is where custom AzerothShard function scripts declarations should be added. */
+#endif
+
 #ifdef SCRIPTS
 //world
 void AddSC_areatrigger_scripts();
@@ -693,6 +698,10 @@ void AddScripts()
     AddSpellScripts();
     AddSC_SmartScripts();
     AddCommandScripts();
+#ifdef AZTH_SCRIPT_MGR
+	AddAzthCustomScripts();
+	/* This is where custom AzerothShard function scripts declarations should be added. */
+#endif
 #ifdef SCRIPTS
     AddWorldScripts();
     AddEasternKingdomsScripts();
@@ -1421,3 +1430,11 @@ void AddCustomScripts()
 
 #endif
 }
+
+#ifdef AZTH_SCRIPT_MGR
+void AddAzthCustomScripts()
+{
+	AddSC_azth_commandscript();
+	/* This is where custom AzerothShard scripts should be added. */
+}
+#endif

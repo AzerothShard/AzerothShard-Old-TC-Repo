@@ -699,7 +699,10 @@ enum RBACPermissions
 
     // custom permissions 1000+
     // [AZTH]
+	RBAC_PERM_COMMAND_AZTH                                   = 999,
     RBAC_PERM_COMMAND_QUESTCOMPLETER                         = 1000,
+	RBAC_PERM_COMMAND_AZTH_MAXSKILL                          = 1001,
+
     // [/AZTH]
     RBAC_PERM_MAX
 };

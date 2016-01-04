@@ -40,6 +40,10 @@ file(GLOB_RECURSE sources_Pools Pools/*.cpp Pools/*.h)
 file(GLOB_RECURSE sources_Quests Quests/*.cpp Quests/*.h)
 file(GLOB_RECURSE sources_Reputation Reputation/*.cpp Reputation/*.h)
 file(GLOB_RECURSE sources_Scripting Scripting/*.cpp Scripting/*.h)
+IF(AZTH_SCRIPT_MGR)
+	list(REMOVE_ITEM sources_Scripting ${CMAKE_CURRENT_SOURCE_DIR}/Scripting/ScriptMgr.h)
+	list(REMOVE_ITEM sources_Scripting ${CMAKE_CURRENT_SOURCE_DIR}/Scripting/ScriptMgr.cpp)
+endif()
 file(GLOB_RECURSE sources_Server Server/*.cpp Server/*.h)
 file(GLOB_RECURSE sources_Skills Skills/*.cpp Skills/*.h)
 file(GLOB_RECURSE sources_Spells Spells/*.cpp Spells/*.h)
@@ -211,6 +215,10 @@ add_library(game STATIC
 target_link_libraries(game
   azth_mod
 )
+
+IF(AZTH_SCRIPT_MGR)
+	target_compile_definitions(game PRIVATE AZTH_SCRIPT_MGR=1)
+ENDIF()
 
 # Generate precompiled header
 if (USE_COREPCH)
