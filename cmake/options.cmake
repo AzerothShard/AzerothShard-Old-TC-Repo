@@ -7,7 +7,6 @@
 # This program is distributed in the hope that it will be useful, but
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-include(CMakeDependentOption)
 
 option(SERVERS          "Build worldserver and authserver"                            1)
 option(SCRIPTS          "Build core with scripts included"                            1)
@@ -20,4 +19,3 @@ set(WITH_SOURCE_TREE "no" CACHE STRING "Build the source tree for IDE's.")
 set_property(CACHE WITH_SOURCE_TREE PROPERTY STRINGS no flat hierarchical)
 option(WITHOUT_GIT      "Disable the GIT testing routines"                            0)
 option(AZTH_SCRIPT_MGR  "Use Azeroth script_manager instead of trinity"               0)
-CMAKE_DEPENDENT_OPTION(AZTH_SCRIPTS "Load Azeroth scripts" 0 "AZTH_SCRIPT_MGR" 0)

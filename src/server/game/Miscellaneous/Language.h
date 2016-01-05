@@ -31,6 +31,7 @@ enum TrinityStrings
     
     // [AZTH]
     LANG_BG_ANNOUNCE_TEAM_READY         = 90000,
+    LANG_REQUIRED_LEVEL                 = 90001,
     // [/AZTH]
 
     // for chat commands
