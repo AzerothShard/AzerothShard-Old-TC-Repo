@@ -78,11 +78,6 @@ void AddSC_ticket_commandscript();
 void AddSC_titles_commandscript();
 void AddSC_wp_commandscript();
 
-#ifdef AZTH_SCRIPT_MGR
-void AddSC_azth_commandscript();
-/* This is where custom AzerothShard function scripts declarations should be added. */
-#endif
-
 #ifdef SCRIPTS
 //world
 void AddSC_areatrigger_scripts();
@@ -690,6 +685,17 @@ void AddSC_outdoorpvp_zm();
 // player
 void AddSC_chat_log();
 void AddSC_action_ip_logger();
+
+//[AZTH]
+#ifdef AZTH_SCRIPT_MGR_CUSTOM
+void AddSC_azth_commandscript();
+/* This is where custom AzerothShard function scripts declarations should be added. */
+#endif
+
+#ifdef AZTH_SCRIPT_MGR_TC
+/* This is where custom TC function scripts declarations should be added. */
+#endif
+//[AZTH]
 
 #endif
 
@@ -1431,10 +1437,19 @@ void AddCustomScripts()
 #endif
 }
 
-#ifdef AZTH_SCRIPT_MGR
+//[AZTH]
 void AddAzthCustomScripts()
 {
+#ifdef AZTH_SCRIPT_MGR_CUSTOM
 	AddSC_azth_commandscript();
 	/* This is where custom AzerothShard scripts should be added. */
-}
 #endif
+}
+
+void AddTcCustomScripts()
+{
+#ifdef AZTH_SCRIPT_MGR_TC
+    /* This is where custom TC scripts should be added. */
+#endif
+}
+//[AZTH]

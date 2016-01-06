@@ -838,6 +838,19 @@ class GroupScript : public ScriptObject
         virtual void OnDisband(Group* /*group*/) { }
 };
 
+//[AZTH]
+class AzerothScript : public ScriptObject
+{
+    protected:
+
+        AzerothScript(const char* name);
+
+    public:
+        //Test function to show usage
+        virtual void onTest() { }
+};
+//[AZTH]
+
 // Placed here due to ScriptRegistry::AddScript dependency.
 #define sScriptMgr ScriptMgr::instance()
 
@@ -1104,7 +1117,12 @@ class ScriptMgr
         uint32 DecreaseScheduledScriptCount() { return --_scheduledScripts; }
         uint32 DecreaseScheduledScriptCount(size_t count) { return _scheduledScripts -= count; }
         bool IsScriptScheduled() const { return _scheduledScripts > 0; }
+    
+    //[AZTH]
+    public: /*AzerothShard scripts*/
 
+        void onTest();
+    //[AZTH]
     private:
 
         uint32 _scriptCount;

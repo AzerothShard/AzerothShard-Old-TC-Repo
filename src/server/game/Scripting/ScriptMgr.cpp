@@ -1695,6 +1695,19 @@ GroupScript::GroupScript(const char* name)
     ScriptRegistry<GroupScript>::AddScript(this);
 }
 
+//[AZTH]
+AzerothScript::AzerothScript(const char* name)
+    : ScriptObject(name)
+{
+    ScriptRegistry<AzerothScript>::AddScript(this);
+}
+
+void ScriptMgr::onTest()
+{
+    FOREACH_SCRIPT(AzerothScript)->onTest();
+}
+//[AZTH]
+
 // Instantiate static members of ScriptRegistry.
 template<class TScript> std::map<uint32, TScript*> ScriptRegistry<TScript>::ScriptPointerList;
 template<class TScript> uint32 ScriptRegistry<TScript>::_scriptIdCounter = 0;
@@ -1726,6 +1739,9 @@ template class ScriptRegistry<GuildScript>;
 template class ScriptRegistry<GroupScript>;
 template class ScriptRegistry<UnitScript>;
 template class ScriptRegistry<AccountScript>;
+//[AZTH]
+template class ScriptRegistry<AzerothScript>;
+//[AZTH]
 
 // Undefine utility macros.
 #undef GET_SCRIPT_RET
