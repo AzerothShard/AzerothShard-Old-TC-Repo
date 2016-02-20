@@ -38,7 +38,7 @@
 #                     Logs directory must exists, or log file creation will be disabled.
 #        Default:     "" - (Log files will be stored in the current path)
 
-LogsDir = ""
+LogsDir = "../../logs"
 
 #
 #    MaxPingTime
@@ -68,7 +68,7 @@ BindIP = "0.0.0.0"
 #        Example:     "./authserver.pid"  - (Enabled)
 #        Default:     ""                  - (Disabled)
 
-PidFile = ""
+PidFile = "auth.pid"
 
 #
 #    UseProcessors
@@ -146,7 +146,7 @@ WrongPass.Logging = 0
 #                                                                           Unix/Linux)
 #        Default:     "127.0.0.1;3306;trinity;trinity;auth"
 
-LoginDatabaseInfo = "127.0.0.1;3306;trinity;trinity;auth"
+LoginDatabaseInfo = "127.0.0.1;3306;root;root;azth_auth"
 
 #
 #    LoginDatabase.WorkerThreads
@@ -171,7 +171,7 @@ LoginDatabase.WorkerThreads = 1
 #        Default:     0  - (All Disabled)
 #                     1  - (All Enabled)
 
-Updates.EnableDatabases = 0
+Updates.EnableDatabases = 1
 
 #
 #    Updates.SourcePath
@@ -180,7 +180,7 @@ Updates.EnableDatabases = 0
 #        Example:     "../TrinityCore"
 #        Default:     ""
 
-Updates.SourcePath  = ""
+Updates.SourcePath  = "../../usr/server"
 
 #
 #    Updates.MySqlCLIPath
@@ -191,7 +191,7 @@ Updates.SourcePath  = ""
 #                     "/usr/bin/mysql"
 #        Default:     ""
 
-Updates.MySqlCLIPath = ""
+Updates.MySqlCLIPath = "/usr/bin/mysql"
 
 #
 #    Updates.AutoSetup
@@ -309,7 +309,7 @@ Updates.CleanDeadRefMaxCount = 3
 #
 
 Appender.Console=1,2,0
-Appender.Auth=2,2,0,Auth.log,w
+Appender.Auth=2,2,1,Auth.log,w
 
 #  Logger config values: Given a logger "name"
 #    Logger.name

@@ -212,6 +212,14 @@ target_link_libraries(game
   azth_mod
 )
 
+IF(AZTH_SCRIPT_MGR_TC)
+	target_compile_definitions(game PRIVATE AZTH_SCRIPT_MGR_TC=1)
+ENDIF()
+IF(AZTH_SCRIPT_MGR_CUSTOM)
+	target_compile_definitions(game PRIVATE AZTH_SCRIPT_MGR_CUSTOM=1)
+ENDIF()
+
+
 # Generate precompiled header
 if (USE_COREPCH)
   add_cxx_pch(game ${game_STAT_PCH_HDR} ${game_STAT_PCH_SRC})

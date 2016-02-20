@@ -1104,7 +1104,12 @@ class ScriptMgr
         uint32 DecreaseScheduledScriptCount() { return --_scheduledScripts; }
         uint32 DecreaseScheduledScriptCount(size_t count) { return _scheduledScripts -= count; }
         bool IsScriptScheduled() const { return _scheduledScripts > 0; }
+    
+    //[AZTH]
+    public: /*AzerothShard custom */
 
+        void onTest();
+    //[AZTH]
     private:
 
         uint32 _scriptCount;

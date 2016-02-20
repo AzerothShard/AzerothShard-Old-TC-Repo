@@ -152,68 +152,68 @@ INSERT INTO `rbac_linked_permissions` VALUES
 (100000, 796),    # Command: instance getbossstate
 (100000, 517),    # Command: pinfo
 (100000, 556),    # Command: modify phase
+(100000, 513),    # Command: maxskill
+(100000, 522),    # Command: respawn
+(100000, 523),    # Command: revive
+(100000, 526),    # Command: set skill
+(100000, 558),    # Command: modify rep
+(100000, 451),    # Command: lookup player
+(100000, 452),    # Command: lookup player ip
+(100000, 453),    # Command: lookup player account
+(100000, 454),    # Command: lookup player email
+(100000, 455),    # Command: lookup skill ( can inspect other players skills )
+(100000, 417),    # Command: learn
+(100000, 418),    # Command: learn all
+(100000, 419),    # Command: learn all my
+(100000, 420),    # Command: learn all my class
+(100000, 421),    # Command: learn all my pettalents
+(100000, 422),    # Command: learn all my spells
+(100000, 423),    # Command: learn all my talents
+(100000, 424),    # Command: learn all gm
+(100000, 425),    # Command: learn all crafts
+(100000, 426),    # Command: learn all default
+(100000, 427),    # Command: learn all lang
+(100000, 428),    # Command: learn all recipes
+(100000, 429),    # COmmand: unlearn
+(100000, 251),    # Command: banlist ip
+(100000, 250),    # Command: banlist character
+(100000, 249),    # Command: banlist account
+(100000, 248),    # Command: banlist
+(100000, 247),    # Command: baninfo ip
+(100000, 246),    # Command: baninfo character
+(100000, 245),    # Command: baninfo account
+(100000, 244),    # Command: baninfo
+(100000, 521),    # Command: repairitems
+(100000, 711),    # Command: reset achievements
+(100000, 712),    # Command: reset honor
+(100000, 713),    # Command: reset level
+(100000, 714),    # Command: reset spells
+(100000, 715),    # Command: reset stats
+(100000, 716),    # Command: reset talents
+(100000, 710),    # Command: reset
+(100000, 488),    # Command: additem
+(100000, 489),    # Command: additemset
+(100000, 287),    # Command: levelup
+(100000, 231),    # Command: achievement add
+(100000, 602),    # Command: quest
+(100000, 603),    # Command: quest add
+(100000, 604),    # Command: quest complete
+(100000, 605),    # Command: quest remove
+(100000, 606),    # Command: quest reward
+(100000, 578),    # Command: npc follow
+(100000, 579),    # Command: npc follow stop
+(100000, 777),    # Command: mailbox
+(100000, 284),    # Command: character rename
+(100000, 274),    # Command: character customize
+(100000, 275),    # Command: character changefaction
+(100000, 276),    # Command: character changerace
+(100000, 795),    # Command: instance setbossstate
+(100000, 529),    # Command: unaura
+(100000, 500),    # Command: die
 
 # [100001] TIER 1: Supporter
 (100001, 100000), # inheriting from TIER 0
-(100001, 513),    # Command: maxskill
-(100001, 522),    # Command: respawn
-(100001, 523),    # Command: revive
-(100001, 526),    # Command: set skill
-(100001, 558),    # Command: modify rep
-(100001, 451),    # Command: lookup player
-(100001, 452),    # Command: lookup player ip
-(100001, 453),    # Command: lookup player account
-(100001, 454),    # Command: lookup player email
-(100001, 455),    # Command: lookup skill ( can inspect other players skills )
-(100001, 417),    # Command: learn
-(100001, 418),    # Command: learn all
-(100001, 419),    # Command: learn all my
-(100001, 420),    # Command: learn all my class
-(100001, 421),    # Command: learn all my pettalents
-(100001, 422),    # Command: learn all my spells
-(100001, 423),    # Command: learn all my talents
-(100001, 424),    # Command: learn all gm
-(100001, 425),    # Command: learn all crafts
-(100001, 426),    # Command: learn all default
-(100001, 427),    # Command: learn all lang
-(100001, 428),    # Command: learn all recipes
-(100001, 429),    # COmmand: unlearn
-(100001, 251),    # Command: banlist ip
-(100001, 250),    # Command: banlist character
-(100001, 249),    # Command: banlist account
-(100001, 248),    # Command: banlist
-(100001, 247),    # Command: baninfo ip
-(100001, 246),    # Command: baninfo character
-(100001, 245),    # Command: baninfo account
-(100001, 244),    # Command: baninfo
-(100001, 521),    # Command: repairitems
-(100001, 711),    # Command: reset achievements
-(100001, 712),    # Command: reset honor
-(100001, 713),    # Command: reset level
-(100001, 714),    # Command: reset spells
-(100001, 715),    # Command: reset stats
-(100001, 716),    # Command: reset talents
-(100001, 710),    # Command: reset
-(100001, 488),    # Command: additem
-(100001, 489),    # Command: additemset
-(100001, 287),    # Command: levelup
-(100001, 231),    # Command: achievement add
-(100001, 602),    # Command: quest
-(100001, 603),    # Command: quest add
-(100001, 604),    # Command: quest complete
-(100001, 605),    # Command: quest remove
-(100001, 606),    # Command: quest reward
-(100001, 578),    # Command: npc follow
-(100001, 579),    # Command: npc follow stop
-(100001, 777),    # Command: mailbox
-(100001, 284),    # Command: character rename
-(100001, 274),    # Command: character customize
-(100001, 275),    # Command: character changefaction
-(100001, 276),    # Command: character changerace
-(100001, 795),    # Command: instance setbossstate
-(100001, 529),    # Command: unaura
 (100001, 743),    # Command: ticket assign
-(100001, 500),    # Command: die
 
 # [100002] TIER 2: Protector - Moderator
 (100002, 193),    # inheriting from GM 2
@@ -238,36 +238,28 @@ INSERT INTO `rbac_linked_permissions` VALUES
 (100003, 193),    # inheriting from GM LVL 2
 (100003, 100002), # inherit from TIER 2
 
-# [100010] Story Teller
-(100010, 100000), # inherit from TIER 0
-(100010, 596),    # Command: npc playemote
-(100010, 598),    # Command: npc textemote
-(100010, 599),    # Command: npc whisper
-(100010, 600),    # Command: npc yell
-(100010, 287),    # Command: levelup
-(100010, 417),    # Command: learn
-(100010, 480),    # Command: pet create
-(100010, 578),    # Command: npc follow
-(100010, 579),    # Command: npc follow stop
-(100010, 488),    # Command: additem
-(100010, 489),    # Command: additemset
-(100010, 542),    # Command: morph
-(100010, 543),    # Command: demorph
-
-# [100006] Master Story Teller
-(100006, 100010), # inheriting Story Teller
-(100006, 193),    # inheriting from GM LVL 2
-
 # [100005] Entertainer
 (100005, 100000), # inherit from TIER 0
 (100005, 542), # Command: morph
 (100005, 543), # Command: demorph
 (100005, 535), # Command: wchange
 (100005, 597), # Command: npc say
+(100005, 596),    # Command: npc playemote
+(100005, 598),    # Command: npc textemote
+(100005, 599),    # Command: npc whisper
+(100005, 600),    # Command: npc yell
+(100005, 480),    # Command: pet create
 
 # [100004] Master Entertainer
 (100004, 100005), # inheriting from Entertainer
 (100004, 193),    # inheriting from GM LVL 2
+
+# [100010] Story Teller
+(100010, 100005), # inherit from Entertainer
+
+# [100006] Master Story Teller
+(100006, 100010), # inheriting Story Teller
+(100006, 193),    # inheriting from GM LVL 2
 
 
 ### TEST SERVER ROLES ###

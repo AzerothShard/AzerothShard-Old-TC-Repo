@@ -2,14 +2,19 @@
 #
 # AZTH_SUBDIRLIST
 #
-FUNCTION(AZTH_SUBDIRLIST result curdir recursive)
+FUNCTION(AZTH_SUBDIRLIST result curdir recursive includeRoot)
   # glob recurse seem's doesn't work
   FILE(GLOB children RELATIVE ${curdir} "${curdir}/[^\\.]*")
-  SET(dirlist "")
+  if (includeRoot)
+    SET(dirlist "${curdir}")
+  else()
+    SET(dirlist "")
+  endif()
+
   FOREACH(child ${children})
     IF(IS_DIRECTORY "${curdir}/${child}")
         if (recursive)
-          AZTH_SUBDIRLIST(sub_Dirs "${curdir}/${child}" TRUE)
+          AZTH_SUBDIRLIST(sub_Dirs "${curdir}/${child}" TRUE FALSE)
           SET(dirlist "${curdir}/${child}" ${sub_Dirs} ${dirlist})
         else()
           SET(dirlist "${curdir}/${child}" ${dirlist}) 

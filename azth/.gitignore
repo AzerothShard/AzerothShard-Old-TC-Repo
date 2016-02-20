@@ -73,6 +73,8 @@ local.properties
 # TeXlipse plugin
 .texlipse
 
-/bin/config.sh
+# AZTH
+
+/bin/compiler/config.sh
 
 /usr/

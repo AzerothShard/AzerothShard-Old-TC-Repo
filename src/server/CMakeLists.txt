@@ -34,5 +34,5 @@ add_subdirectory(scripts)
 add_subdirectory(worldserver)
 
 # [AZTH]
-LOAD_AZTH_MODS()
+LOAD_AZTH_MODULE()
 

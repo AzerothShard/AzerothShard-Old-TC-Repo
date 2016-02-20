@@ -89,7 +89,6 @@ void AddSC_item_scripts();
 void AddSC_npc_professions();
 void AddSC_npc_innkeeper();
 void AddSC_npcs_special();
-void AddSC_npc_taxi();
 void AddSC_achievement_scripts();
 void AddSC_action_ip_logger();
 void AddSC_duel_reset();
@@ -781,7 +780,6 @@ void AddWorldScripts()
     AddSC_npc_professions();
     AddSC_npc_innkeeper();
     AddSC_npcs_special();
-    AddSC_npc_taxi();
     AddSC_achievement_scripts();
     AddSC_chat_log(); // location: scripts\World\chat_log.cpp
     // To avoid duplicate code, we check once /*ONLY*/ if logging is permitted or not.
@@ -1411,13 +1409,13 @@ void AddBattlegroundScripts()
 
 #ifdef SCRIPTS
 /* This is where custom scripts' loading functions should be declared. */
-
+void AddSC_npc_1v1arena();
 #endif
 
 void AddCustomScripts()
 {
 #ifdef SCRIPTS
     /* This is where custom scripts should be added. */
-
+	AddSC_npc_1v1arena();
 #endif
 }
