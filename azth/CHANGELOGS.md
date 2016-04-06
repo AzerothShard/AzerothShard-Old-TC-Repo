@@ -4,7 +4,8 @@ Our Milestones refer to a specific state of the entire project that includes bot
 
 A special thank you to all our Testers, GM and the whole staff that costantly helps us to keep quality and stability.
 
-## [ UNDER WORKING ]
+## < UNDER WORKING >  [Following changes are mostly available on our development realms]
+* {GAME_SERVER} Fix for immune mechanic and evade problem for Halion [ MadAgos ]
 * {GAME_SERVER} first version of working 1vs1 Arena ( without removing 5vs5 ) [ Yehonal & MadAgos ]
 * {GAME_SERVER} dynamic exp command fix [ Kepler ]
 * {GAME_SERVER} TOC5 Fix [ Tiuz ]
