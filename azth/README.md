@@ -19,7 +19,8 @@ With **custom code** we mean all code that is not currently part of TrinityCore.
 All custom code must be surrounded by ```// [AZTH]```  and ```// [/AZTH]``` tags, specifying the name of the author. Example:
 
 ```
-// [AZTH] AuthorName
+// [AZTH] AuthorName,RevisorName.. :
+// motivation/usage/comment
 
 // custom code
 
@@ -30,16 +31,15 @@ All custom code must be surrounded by ```// [AZTH]```  and ```// [/AZTH]``` tags
 
 ### Directory structure
 
-All custom SQL files are placed under **/azth/data/sql** folder, divided into 2 categories:
+All custom SQL files are placed under **/azth[_custom]/data/sql** folder
 
-- Structure files in **/azth/data/sql/struct** 
-- Contents files in **/azth/data/sql/content**
+Subdivided in 3 folders, one for each database:
 
-Each category has 3 folders, one for each database:
+- db-world
+- db-characters
+- db-auth
 
-- world
-- characters
-- auth
+there is also a "tool" folder that contains various usefull sql to use occasionally
 
 ### File names
 
