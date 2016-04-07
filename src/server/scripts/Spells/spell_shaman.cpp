@@ -179,7 +179,7 @@ class spell_sha_bloodlust : public SpellScriptLoader
             {
                 if (!sSpellMgr->GetSpellInfo(SPELL_SHAMAN_SATED))
                     return false;
-                // [AZTH]
+                // [AZTH] Shin: fix for bloodlust + heroism abuse with bothfaction
                 if (!sSpellMgr->GetSpellInfo(SPELL_SHAMAN_EXHAUSTION))
                     return false;
                 // [/AZTH]
@@ -189,7 +189,7 @@ class spell_sha_bloodlust : public SpellScriptLoader
             void RemoveInvalidTargets(std::list<WorldObject*>& targets)
             {
                 targets.remove_if(Trinity::UnitAuraCheck(true, SPELL_SHAMAN_SATED));
-                // [AZTH]
+                // [AZTH] Shin: fix for bloodlust + heroism abuse with bothfaction
                 targets.remove_if(Trinity::UnitAuraCheck(true, SPELL_SHAMAN_EXHAUSTION));
                 // [/AZTH]
             }

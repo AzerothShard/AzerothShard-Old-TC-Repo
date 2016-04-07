@@ -1889,7 +1889,7 @@ public:
 ## npc_experience
 ######*/
 
-// [AZTH]
+// [AZTH] Shin: reduced npc experience cost
 //#define EXP_COST                100000 //10 00 00 copper (10golds)
 #define EXP_COST                1000 //10 00 copper (10silvers)
 // [/AZTH]
