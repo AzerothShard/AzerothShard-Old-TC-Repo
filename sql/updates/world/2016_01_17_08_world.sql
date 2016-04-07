@@ -1,4 +1,4 @@
--- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT'
+-- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT' 
 SET @NPC := 57733;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=-4259.922,`position_y`=-11744.17,`position_z`=-132.7823 WHERE `guid`=@NPC;
@@ -32,7 +32,7 @@ INSERT INTO `waypoint_data` (`id`,`point`,`position_x`,`position_y`,`position_z`
 (@PATH,24,-4258.692,-11745.92,-132.5334,0,0,0,0,100,0), -- 10:13:33
 (@PATH,25,-4259.942,-11744.17,-132.7834,0,0,0,0,100,0); -- 10:13:33
 
--- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT'
+-- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT' 
 SET @NPC := 57732;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=-4216.665,`position_y`=-11647.06,`position_z`=-143.7448 WHERE `guid`=@NPC;
@@ -77,7 +77,7 @@ INSERT INTO `waypoint_data` (`id`,`point`,`position_x`,`position_y`,`position_z`
 (@PATH,35,-4217.077,-11638.74,-139.8906,0,0,0,0,100,0), -- 10:41:55
 (@PATH,36,-4216.827,-11644.74,-143.3906,0,0,0,0,100,0); -- 10:41:55
 
--- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT'
+-- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT' 
 SET @NPC := 57731;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=-4055.538,`position_y`=-11719.55,`position_z`=-138.8952 WHERE `guid`=@NPC;
@@ -108,7 +108,7 @@ INSERT INTO `creature_formations` (`leaderGUID`, `memberGUID`, `dist`, `angle`, 
 (57722, 57722, 0, 0, 1),
 (57722, 57723, 2, 270, 2);
 
--- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT'
+-- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT' 
 SET @NPC := 57722;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=-4035.478,`position_y`=-11451.96,`position_z`=-55.53455 WHERE `guid`=@NPC;
@@ -176,7 +176,7 @@ INSERT INTO `creature_formations` (`leaderGUID`, `memberGUID`, `dist`, `angle`, 
 (57721, 57721, 0, 0, 1),
 (57721, 57720, 2, 270, 2);
 
--- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT'
+-- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT' 
 SET @NPC := 57721;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=-3967.541,`position_y`=-11439.45,`position_z`=-136.5146 WHERE `guid`=@NPC;
@@ -219,7 +219,7 @@ INSERT INTO `waypoint_data` (`id`,`point`,`position_x`,`position_y`,`position_z`
 (@PATH,33,-3987.292,-11453.23,-136.7993,0,0,0,0,100,0), -- 10:22:02
 (@PATH,34,-3986.042,-11451.73,-136.7993,0,0,0,0,100,0); -- 10:22:02
 
--- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT'
+-- Pathing for Exodar Peacekeeper Entry: 16733 'TDB FORMAT' 
 SET @NPC := 57735;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=-4251.791,`position_y`=-11767.84,`position_z`=-93.89223 WHERE `guid`=@NPC;
@@ -303,7 +303,7 @@ INSERT INTO `waypoint_data` (`id`,`point`,`position_x`,`position_y`,`position_z`
 (@PATH,74,-4266.636,-11784.24,-93.59824,0,0,0,0,100,0), -- 10:12:14
 (@PATH,75,-4252.229,-11768.59,-93.55703,0,0,0,0,100,0); -- 10:12:24
 
--- Pathing for Worker Entry: 18800 'TDB FORMAT'
+-- Pathing for Worker Entry: 18800 'TDB FORMAT' 
 SET @NPC := 67155;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=-4045.227,`position_y`=-11567.36,`position_z`=-138.4557 WHERE `guid`=@NPC;
@@ -389,7 +389,7 @@ INSERT INTO `waypoint_data` (`id`,`point`,`position_x`,`position_y`,`position_z`
 -- Add missing Exodar Peace Keepers
 SET @CGUID:=87912;
 DELETE FROM `creature` WHERE `guid` BETWEEN @CGUID+0 AND @CGUID+15;
-INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `curhealth`) VALUES
+INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `curhealth`) VALUES 
 (@CGUID+0, 16733, 530, -4014.95, -11691.79, -134.8826, 3.211406, 120, 0), -- 16733 (Area: -1) (Auras: )
 (@CGUID+1, 16733, 530, -3872.768, -11745.65, -107.2824, 1.937315, 120, 0), -- 16733 (Area: -1) (Auras: )
 (@CGUID+2, 16733, 530, -3858.128, -11736.21, -107.0747, 2.111848, 120, 0), -- 16733 (Area: -1) (Auras: )

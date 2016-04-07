@@ -1,4 +1,4 @@
--- Pathing for Kalecgos Entry: 24844 'TDB FORMAT'
+-- Pathing for Kalecgos Entry: 24844 'TDB FORMAT' 
 SET @NPC := 24844;
 SET @PATH := @NPC * 10;
 DELETE FROM `waypoint_data` WHERE `id`=@PATH;

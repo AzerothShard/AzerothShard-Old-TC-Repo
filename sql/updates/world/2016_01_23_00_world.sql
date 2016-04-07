@@ -3,7 +3,7 @@ INSERT INTO `creature_formations` (`leaderGUID`, `memberGUID`, `dist`, `angle`, 
 (63381, 63381, 0, 0, 1),
 (63381, 63380, 2, 270, 2);
 
--- Pathing for Blade of Argus Entry: 17659 'TDB FORMAT'
+-- Pathing for Blade of Argus Entry: 17659 'TDB FORMAT' 
 SET @NPC := 63381;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=-2393.32,`position_y`=-12009.38,`position_z`=26.83788 WHERE `guid`=@NPC;

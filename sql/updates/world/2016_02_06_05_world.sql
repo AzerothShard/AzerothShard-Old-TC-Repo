@@ -1,4 +1,4 @@
---
+-- 
 -- Silithus Stone spells should ignore LoS
 DELETE FROM `disables` WHERE `sourceType`=0 AND `entry` IN (24803,24745,24747,24757,24759,24761,24762,24766,24769,24771,24773,24785,24787,24791,24792,24793);
 INSERT INTO `disables` (`sourceType`, `entry`, `flags`, `params_0`, `params_1`, `comment`) VALUES

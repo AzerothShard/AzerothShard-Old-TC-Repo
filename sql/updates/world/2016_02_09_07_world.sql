@@ -22,15 +22,15 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 (2384200,9,1,0,0,0,100,0,0,0,0,0,90,8,0,0,0,0,0,1,0,0,0,0,0,0,0,'Westguard Defender - Script - Set Bytes 1'), -- 19:36:43.046
 (2384200,9,2,0,0,0,100,0,1000,1000,0,0,11,43391,0,0,0,0,0,1,0,0,0,0,0,0,0,'Westguard Defender - Script - Cast Vomit'), -- 19:36:44.231
 (2384200,9,3,0,0,0,100,0,9000,9000,0,0,91,8,0,0,0,0,0,1,0,0,0,0,0,0,0,'Westguard Defender - Script - Set Bytes 1'), -- 19:36:53.872
-(2384200,9,4,0,0,0,100,0,0,0,0,0,24,0,0,0,0,0,0,1,0,0,0,0,0,0,0,'Westguard Defender - Script - Evade'),
-(2428401,9,0,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99027,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'),
-(2428401,9,1,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99023,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'),
-(2428401,9,2,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99012,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'),
-(2428401,9,3,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99010,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'),
-(2428401,9,4,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99024,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'),
-(2428401,9,5,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99026,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'),
-(2428401,9,6,0,0,0,100,0,0,0,0,0,45,1,1,0,0,0,0,9,23842,0,80,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Set Data'),
-(2428401,9,7,0,0,0,100,0,1000,1000,0,0,37,0,0,0,0,0,0,1,0,0,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Cast Suicide, No Blood, No Logging'),
+(2384200,9,4,0,0,0,100,0,0,0,0,0,24,0,0,0,0,0,0,1,0,0,0,0,0,0,0,'Westguard Defender - Script - Evade'), 
+(2428401,9,0,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99027,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'), 
+(2428401,9,1,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99023,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'), 
+(2428401,9,2,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99012,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'), 
+(2428401,9,3,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99010,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'), 
+(2428401,9,4,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99024,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'), 
+(2428401,9,5,0,0,0,100,0,0,0,0,0,1,1,0,0,0,0,0,10,99026,23842,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Say'), 
+(2428401,9,6,0,0,0,100,0,0,0,0,0,45,1,1,0,0,0,0,9,23842,0,80,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Set Data'), 
+(2428401,9,7,0,0,0,100,0,1000,1000,0,0,37,0,0,0,0,0,0,1,0,0,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script 2 - Cast Suicide, No Blood, No Logging'), 
 (2428400,9,0,0,0,0,100,0,0,0,0,0,5,7,0,0,0,0,0,1,0,0,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script - Play Emote (OneShotEat)'), -- 19:36:18.195
 (2428400,9,1,0,0,0,100,0,0,0,0,0,71,0,0,2200,0,0,0,1,0,0,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script - Equip item 2200 to Slot 1'), -- 19:36:18.195
 (2428400,9,2,0,0,0,100,0,2800,2800,0,0,11,21862,0,0,0,0,0,1,0,0,0,0,0,0,0,'Dragonflayer Vrykul Prisoner - Script - Cast Radiation'), -- 19:36:20.925
@@ -46,7 +46,7 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 
 
 DELETE FROM `waypoints` WHERE `entry`=24284;
-INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES
+INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES 
 (24284, 1, 1366.673, -3179.636, 153.576, 'Dragonflayer Vrykul Prisoner'),
 (24284, 2, 1367.06, -3177.925, 153.576, 'Dragonflayer Vrykul Prisoner'),
 (24284, 3, 1368.679, -3181.09, 153.576, 'Dragonflayer Vrykul Prisoner'),

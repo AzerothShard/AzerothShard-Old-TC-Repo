@@ -3,7 +3,7 @@ INSERT INTO `creature_formations` (`leaderGUID`, `memberGUID`, `dist`, `angle`, 
 (33658, 33658, 0, 0, 1),
 (33658, 33657, 10, 0, 2);
 
--- Pathing for Hazzas Entry: 5722 'TDB FORMAT'
+-- Pathing for Hazzas Entry: 5722 'TDB FORMAT' 
 SET @NPC := 33658;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=-649.7056,`position_y`=131.495,`position_z`=-90.5838 WHERE `guid`=@NPC;

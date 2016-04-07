@@ -1,4 +1,4 @@
---
+-- 
 -- Remove skinning_loot_template 100008 from non-skinnable beasts:
 UPDATE `creature_template` SET `skinloot`= 0 WHERE `skinloot`= 100008 AND `entry` NOT IN (1042,1043,1069);
 

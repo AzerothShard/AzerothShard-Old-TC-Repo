@@ -1,4 +1,4 @@
---
+-- 
 -- DB/Quest: Absholutely... Thish Will Work (11330)
 SET @Prisoner   :=24284; -- Dragonflayer Vrykul Prisoner
 SET @PeppysMix  :=43386; -- Spell Peppy's Special Mix
@@ -11,14 +11,14 @@ SET @WGOfficer  :=23844; -- Westguard Officer
 SET @WGOguid    :=99195; -- Westguard Officer Guid
 SET @HumoVerde  :=18951; -- Spirit Particles (green) / humo verde
 SET @CuerpoVerde:=39168; -- Vertex Color Green / efecto verde
-SET @MocoVerde  :=28989; -- Plague Slime (Green) / Morph de Moco-Ooze
+SET @MocoVerde  :=28989; -- Plague Slime (Green) / Morph de Moco-Ooze    
 SET @Crazed     :=48147; -- Crazed (enrage) - Only Defender
 SET @Defensive  :=7164; -- Defensive stance
 SET @ImpBlocking:=3639; --  improved blocking
 SET @ShieldBash :=11972; -- Shield Bash
 SET @Shoot      :=6660; -- Shoot
 SET @DemorlShout:=16244; -- Demoralizing Shout - Only Officer
-
+     
 UPDATE `creature_template` SET `ainame`='SmartAI' WHERE `entry` IN (@Prisoner,@WGDefender,@WGOfficer);
 DELETE FROM `smart_scripts` WHERE `entryorguid` IN (@Prisoner,@WGDefender,@WGOfficer) AND `source_type`=0;
 DELETE FROM `smart_scripts` WHERE `entryorguid` IN (@Prisoner*100) AND `source_type`=9;
@@ -49,7 +49,7 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 (@WGOfficer,0,3,0,0,0,100,0,1000,3000,10400,10400,11,@ImpBlocking,0,0,0,0,0,1,0,0,0,0,0,0,0,'Westguard Officer - IC - Cast Improved Blocking'),
 (@WGOfficer,0,4,0,0,0,100,0,2000,5000,8000,21000,11,@ShieldBash,0,0,0,0,0,2,0,0,0,0,0,0,0,'Westguard Officer - IC - Cast ShieldBash'),
 (@WGOfficer,0,5,0,0,0,100,0,0,5000,1000,6000,11,@Shoot,0,0,0,0,0,2,0,0,0,0,0,0,0,'Westguard Officer - IC - Cast Shoot');
-
+ 
 DELETE FROM `creature_text` WHERE `entry` IN (@Prisoner,@WGDefender,@WGOfficer);
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`, `BroadcastTextId`) VALUES
 (@Prisoner,0,0,'The vrykul clutches at his throat as he begins to gag and thrash about.',16,0,100,1,0,0,'Dragonflayer Vrykul Prisoner', 23087),

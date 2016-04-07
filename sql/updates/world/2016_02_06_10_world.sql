@@ -1,7 +1,7 @@
 
 -- Estelle Gendry - Gossip
 DELETE FROM `gossip_menu_option` WHERE (`menu_id`=161 AND `id`=0);
-INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `OptionBroadcastTextID`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `box_coded`, `box_money`, `box_text`, `BoxBroadcastTextID`) VALUES
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `OptionBroadcastTextID`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `box_coded`, `box_money`, `box_text`, `BoxBroadcastTextID`) VALUES 
 (161, 0, 0, 'I need another set of thieves'' tools.', 2643, 1, 1, 0, 0, 0, 0, NULL, 0);
 
 -- Estelle Gendry SAI

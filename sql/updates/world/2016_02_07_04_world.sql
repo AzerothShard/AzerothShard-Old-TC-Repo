@@ -1,6 +1,6 @@
 -- DB/Quest: The Collapse
 DELETE FROM `event_scripts` WHERE `id`=16929;
-INSERT INTO `event_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `dataint`, `x`, `y`, `z`, `o`) VALUES
+INSERT INTO `event_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `dataint`, `x`, `y`, `z`, `o`) VALUES 
 (16929, 10, 8, 25742, 0, 0, 0, 0, 0, 0),
 (16929, 3, 10, 25742, 360000, 0, 3517.290039, 4538.782715, -12.983689, 4.428759),
 (16929, 7, 10, 25629, 360000, 0, 3492.105469, 4478.011719, -12.997340, 0.210166),
@@ -18,7 +18,7 @@ INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type
 (@ENTRY,0,1,0,40,0,100,0,1,25742,0,0,80,@ENTRY*100+00,2,0,0,0,0,1,0,0,0,0,0,0,0,"Alluvius - On Waypoint 1 Reached - Run Script");
 
 DELETE FROM `waypoints` WHERE `entry`=25742;
-INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES
+INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES 
 (25742, 1, 3511.336426, 4519.295898, -11.937509, 'Alluvius');
 
 -- Actionlist SAI
@@ -38,7 +38,7 @@ INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type
 (@ENTRY,0,1,0,40,0,100,0,6,25652,0,0,41,1000,0,0,0,0,0,1,0,0,0,0,0,0,0,"Nerub'ar Scarab - On Waypoint 6 Reached - Despawn In 1000 ms");
 
 DELETE FROM `waypoints` WHERE `entry`=25652;
-INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES
+INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES 
 (25652, 1, 3509.71, 4510.5, -14.6752, 'Nerub\'ar Scarab'),
 (25652, 2, 3515.16, 4512.57, -13.4052, 'Nerub\'ar Scarab'),
 (25652, 3, 3520.58, 4511.77, -12.5632, 'Nerub\'ar Scarab'),
@@ -56,12 +56,12 @@ INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type
 (@ENTRY,0,2,0,40,0,100,0,4,25629,0,0,49,0,0,0,0,0,0,21,80,0,0,0,0,0,0,"Lord Kryxix - On Waypoint 4 Reached - Start Attacking");
 
 DELETE FROM `waypoints` WHERE `entry`=25629;
-INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES
+INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES 
 (25629, 1, 3529.33, 4490.55, -12.9951, 'Lord Kryxix'),
 (25629, 2, 3534.51, 4509.94, -12.9951, 'Lord Kryxix'),
 (25629, 3, 3533.52, 4527.86, -12.9951, 'Lord Kryxix'),
 (25629, 4, 3512.91, 4539.59, -12.987, 'Lord Kryxix');
 
 DELETE FROM `creature_text` WHERE `entry`=25629;
-INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`, `BroadcastTextId`) VALUES
+INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`, `BroadcastTextId`) VALUES 
 (25629, 0, 0, 'Foolish elemental slave! You an your master will pay for your medding!', 14, 0, 100, 0, 0, 0, 'Lord Kryxix', 24956);

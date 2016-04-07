@@ -1,4 +1,4 @@
---
+-- 
 -- Sorrow Wing (3.3.5) loot items
 DELETE FROM `creature_loot_template` WHERE `Entry`= 5928;
 INSERT INTO `creature_loot_template` (`Entry`,`Item`,`Reference`,`Chance`,`QuestRequired`,`LootMode`,`GroupID`,`MinCount`,`MaxCount`,`Comment`) VALUES

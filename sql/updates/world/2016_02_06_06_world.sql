@@ -1,4 +1,4 @@
---
+-- 
 -- Defias Gunpowder SAI
 SET @ENTRY := 17155;
 UPDATE `gameobject_template` SET `AIName`="SmartGameObjectAI" WHERE `entry`=@ENTRY;
