@@ -158,17 +158,31 @@ public:
 
                     break;
                 }
+                case DATA_CHAMPIONS_MOUNT_DEATH:
+                {                    
+                        Creature* uiGrandChampion1 = ObjectAccessor::GetCreature(*me, instance->GetGuidData(DATA_GRAND_CHAMPION_1));
+                        Creature* uiGrandChampion2 = ObjectAccessor::GetCreature(*me, instance->GetGuidData(DATA_GRAND_CHAMPION_2));
+                        Creature* uiGrandChampion3 = ObjectAccessor::GetCreature(*me, instance->GetGuidData(DATA_GRAND_CHAMPION_3));
+                        if (uiGrandChampion1 && uiGrandChampion2 && uiGrandChampion3)
+                        {
+                            SetCanAttack(uiGrandChampion1);
+                            SetCanAttack(uiGrandChampion2);
+                            SetCanAttack(uiGrandChampion3);
+                        }                  
+                    break;
+                }
             }
         }
 
         void StartGrandChampionsAttack()
         {
+            
             Creature* pGrandChampion1 = ObjectAccessor::GetCreature(*me, uiVehicle1GUID);
             Creature* pGrandChampion2 = ObjectAccessor::GetCreature(*me, uiVehicle2GUID);
             Creature* pGrandChampion3 = ObjectAccessor::GetCreature(*me, uiVehicle3GUID);
-
+            
             if (pGrandChampion1 && pGrandChampion2 && pGrandChampion3)
-            {
+            {                               
                 AggroAllPlayers(pGrandChampion1);
                 AggroAllPlayers(pGrandChampion2);
                 AggroAllPlayers(pGrandChampion3);
@@ -186,30 +200,76 @@ public:
 
         void DoSummonGrandChampion(uint32 uiBoss)
         {
+            uint32 TeamInInstance = 0;
+            if (me->GetEntry() == NPC_JAEREN)
+                TeamInInstance = HORDE;
+            else
+                TeamInInstance = ALLIANCE;
+            
             ++uiSummonTimes;
             uint32 VEHICLE_TO_SUMMON1 = 0;
-            uint32 VEHICLE_TO_SUMMON2 = 0;
+            uint32 VEHICLE_TO_SUMMON2 = 0;            
             switch (uiBoss)
             {
                 case 0:
-                    VEHICLE_TO_SUMMON1 = VEHICLE_MOKRA_SKILLCRUSHER_MOUNT;
-                    VEHICLE_TO_SUMMON2 = VEHICLE_ORGRIMMAR_WOLF;
+                    if (TeamInInstance == ALLIANCE)
+                    {
+                        VEHICLE_TO_SUMMON1 = VEHICLE_MOKRA_SKILLCRUSHER_MOUNT;
+                        VEHICLE_TO_SUMMON2 = VEHICLE_ORGRIMMAR_WOLF;
+                    }
+                    else
+                    {
+                        VEHICLE_TO_SUMMON1 = VEHICLE_MARSHAL_JACOB_ALERIUS_MOUNT;
+                        VEHICLE_TO_SUMMON2 = VEHICLE_STORMWIND_STEED;
+                    }                                        
                     break;
                 case 1:
-                    VEHICLE_TO_SUMMON1 = VEHICLE_ERESSEA_DAWNSINGER_MOUNT;
-                    VEHICLE_TO_SUMMON2 = VEHICLE_SILVERMOON_HAWKSTRIDER;
+                    if (TeamInInstance == ALLIANCE)
+                    {
+                        VEHICLE_TO_SUMMON1 = VEHICLE_ERESSEA_DAWNSINGER_MOUNT;
+                        VEHICLE_TO_SUMMON2 = VEHICLE_SILVERMOON_HAWKSTRIDER;
+                    }
+                    else
+                    {
+                        VEHICLE_TO_SUMMON1 = VEHICLE_AMBROSE_BOLTSPARK_MOUNT;
+                        VEHICLE_TO_SUMMON2 = VEHICLE_GNOMEREGAN_MECHANOSTRIDER;
+                    }
                     break;
                 case 2:
-                    VEHICLE_TO_SUMMON1 = VEHICLE_RUNOK_WILDMANE_MOUNT;
-                    VEHICLE_TO_SUMMON2 = VEHICLE_THUNDER_BLUFF_KODO;
+                    if (TeamInInstance == ALLIANCE)
+                    {
+                        VEHICLE_TO_SUMMON1 = VEHICLE_RUNOK_WILDMANE_MOUNT;
+                        VEHICLE_TO_SUMMON2 = VEHICLE_THUNDER_BLUFF_KODO;
+                    }
+                    else
+                    {
+                        VEHICLE_TO_SUMMON1 = VEHICLE_COLOSOS_MOUNT;
+                        VEHICLE_TO_SUMMON2 = VEHICLE_EXODAR_ELEKK;
+                    }
                     break;
                 case 3:
-                    VEHICLE_TO_SUMMON1 = VEHICLE_ZUL_TORE_MOUNT;
-                    VEHICLE_TO_SUMMON2 = VEHICLE_DARKSPEAR_RAPTOR;
+                    if (TeamInInstance == ALLIANCE)
+                    {
+                        VEHICLE_TO_SUMMON1 = VEHICLE_ZUL_TORE_MOUNT;
+                        VEHICLE_TO_SUMMON2 = VEHICLE_DARKSPEAR_RAPTOR;
+                    }
+                    else
+                    {
+                        VEHICLE_TO_SUMMON1 = VEHICLE_EVENSONG_MOUNT;
+                        VEHICLE_TO_SUMMON2 = VEHICLE_DARNASSIA_NIGHTSABER;
+                    }
                     break;
                 case 4:
-                    VEHICLE_TO_SUMMON1 = VEHICLE_DEATHSTALKER_VESCERI_MOUNT;
-                    VEHICLE_TO_SUMMON2 = VEHICLE_FORSAKE_WARHORSE;
+                    if (TeamInInstance == ALLIANCE)
+                    {
+                        VEHICLE_TO_SUMMON1 = VEHICLE_DEATHSTALKER_VESCERI_MOUNT;
+                        VEHICLE_TO_SUMMON2 = VEHICLE_FORSAKE_WARHORSE;
+                    }
+                    else
+                    {
+                        VEHICLE_TO_SUMMON1 = VEHICLE_LANA_STOUTHAMMER_MOUNT;
+                        VEHICLE_TO_SUMMON2 = VEHICLE_IRONFORGE_RAM;
+                    }
                     break;
                 default:
                     return;
@@ -222,36 +282,21 @@ public:
                     case 1:
                     {
                         uiVehicle1GUID = pBoss->GetGUID();
-                        ObjectGuid uiGrandChampionBoss1;
-                        if (Vehicle* pVehicle = pBoss->GetVehicleKit())
-                            if (Unit* unit = pVehicle->GetPassenger(0))
-                                uiGrandChampionBoss1 = unit->GetGUID();
                         instance->SetGuidData(DATA_GRAND_CHAMPION_VEHICLE_1, uiVehicle1GUID);
-                        instance->SetGuidData(DATA_GRAND_CHAMPION_1, uiGrandChampionBoss1);
                         pBoss->AI()->SetData(1, 0);
                         break;
                     }
                     case 2:
                     {
                         uiVehicle2GUID = pBoss->GetGUID();
-                        ObjectGuid uiGrandChampionBoss2;
-                        if (Vehicle* pVehicle = pBoss->GetVehicleKit())
-                            if (Unit* unit = pVehicle->GetPassenger(0))
-                                uiGrandChampionBoss2 = unit->GetGUID();
                         instance->SetGuidData(DATA_GRAND_CHAMPION_VEHICLE_2, uiVehicle2GUID);
-                        instance->SetGuidData(DATA_GRAND_CHAMPION_2, uiGrandChampionBoss2);
                         pBoss->AI()->SetData(2, 0);
                         break;
                     }
                     case 3:
                     {
                         uiVehicle3GUID = pBoss->GetGUID();
-                        ObjectGuid uiGrandChampionBoss3;
-                        if (Vehicle* pVehicle = pBoss->GetVehicleKit())
-                            if (Unit* unit = pVehicle->GetPassenger(0))
-                                uiGrandChampionBoss3 = unit->GetGUID();
                         instance->SetGuidData(DATA_GRAND_CHAMPION_VEHICLE_3, uiVehicle3GUID);
-                        instance->SetGuidData(DATA_GRAND_CHAMPION_3, uiGrandChampionBoss3);
                         pBoss->AI()->SetData(3, 0);
                         break;
                     }
@@ -377,14 +422,23 @@ public:
                     if (player->IsAlive())
                     {
                         temp->SetHomePosition(me->GetPositionX(), me->GetPositionY(), me->GetPositionZ(), me->GetOrientation());
-                        temp->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
+                        temp->ClearUpdateMask(false);
+                        temp->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_IMMUNE_TO_PC | UNIT_FLAG_NOT_SELECTABLE | UNIT_FLAG_UNK_15);                                                
                         temp->SetReactState(REACT_AGGRESSIVE);
                         temp->SetInCombatWith(player);
                         player->SetInCombatWith(temp);
-                        temp->AddThreat(player, 0.0f);
+                        temp->AddThreat(player, 0.0f);                                                
                     }
                 }
             }
+        }
+
+        void SetCanAttack(Creature* champion)
+        {
+            champion->SetHomePosition(me->GetPositionX(), me->GetPositionY(), me->GetPositionZ(), me->GetOrientation());
+            champion->ClearUpdateMask(false);
+            champion->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_IMMUNE_TO_PC | UNIT_FLAG_NOT_SELECTABLE | UNIT_FLAG_UNK_15);
+            champion->SetReactState(REACT_AGGRESSIVE);                        
         }
 
        void UpdateAI(uint32 uiDiff) override

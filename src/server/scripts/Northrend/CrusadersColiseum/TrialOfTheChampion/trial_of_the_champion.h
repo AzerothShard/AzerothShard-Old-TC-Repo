@@ -23,12 +23,15 @@
 
 enum Data
 {
+    BOSS_GRAND_CHAMPIONS_MOUNT,
+    GRAND_CHAMPION_SUMMONED,
     BOSS_GRAND_CHAMPIONS,
     BOSS_ARGENT_CHALLENGE_E,
     BOSS_ARGENT_CHALLENGE_P,
     BOSS_BLACK_KNIGHT,
     DATA_MOVEMENT_DONE,
     DATA_LESSER_CHAMPIONS_DEFEATED,
+    DATA_CHAMPIONS_MOUNT_DEATH,
     DATA_START,
     DATA_IN_POSITION,
     DATA_ARGENT_SOLDIER_DEFEATED
@@ -103,11 +106,11 @@ enum Vehicles
     VEHICLE_EVENSONG_MOUNT                          = 34658,
     VEHICLE_LANA_STOUTHAMMER_MOUNT                  = 35636,
     //Faction Champions (ALLIANCE)
-    VEHICLE_DARNASSIA_NIGHTSABER                    = 33319,
-    VEHICLE_EXODAR_ELEKK                            = 33318,
-    VEHICLE_STORMWIND_STEED                         = 33217,
-    VEHICLE_GNOMEREGAN_MECHANOSTRIDER               = 33317,
-    VEHICLE_IRONFORGE_RAM                           = 33316,
+    VEHICLE_DARNASSIA_NIGHTSABER                    = 35332,
+    VEHICLE_EXODAR_ELEKK                            = 35330,
+    VEHICLE_STORMWIND_STEED                         = 35328,
+    VEHICLE_GNOMEREGAN_MECHANOSTRIDER               = 35331,
+    VEHICLE_IRONFORGE_RAM                           = 35329,
     //Grand Champions Horde Vehicles
     VEHICLE_MOKRA_SKILLCRUSHER_MOUNT                = 35638,
     VEHICLE_ERESSEA_DAWNSINGER_MOUNT                = 35635,
@@ -115,11 +118,11 @@ enum Vehicles
     VEHICLE_ZUL_TORE_MOUNT                          = 35641,
     VEHICLE_DEATHSTALKER_VESCERI_MOUNT              = 35634,
     //Faction Champions (HORDE)
-    VEHICLE_FORSAKE_WARHORSE                        = 33324,
-    VEHICLE_THUNDER_BLUFF_KODO                      = 33322,
-    VEHICLE_ORGRIMMAR_WOLF                          = 33320,
-    VEHICLE_SILVERMOON_HAWKSTRIDER                  = 33323,
-    VEHICLE_DARKSPEAR_RAPTOR                        = 33321,
+    VEHICLE_FORSAKE_WARHORSE                        = 35327,
+    VEHICLE_THUNDER_BLUFF_KODO                      = 35325,
+    VEHICLE_ORGRIMMAR_WOLF                          = 35314,
+    VEHICLE_SILVERMOON_HAWKSTRIDER                  = 35326,
+    VEHICLE_DARKSPEAR_RAPTOR                        = 35323,
 
     VEHICLE_ARGENT_WARHORSE                         = 35644,
     VEHICLE_ARGENT_BATTLEWORG                       = 36558,

@@ -155,22 +155,23 @@ public:
     {
         generic_vehicleAI_toc5AI(Creature* creature) : npc_escortAI(creature)
         {
+            instance = creature->GetInstanceScript();
             Initialize();
             SetDespawnAtEnd(false);
             uiWaypointPath = 0;
-
-            instance = creature->GetInstanceScript();
+            bossToSummon = instance->GetData(creature->GetEntry());
         }
 
         void Initialize()
         {
             uiChargeTimer = 5000;
             uiShieldBreakerTimer = 8000;
-            uiBuffTimer = urand(30000, 60000);
+            uiBuffTimer = urand(30000, 60000);            
+            TC_LOG_DEBUG("sever.loading", "");
         }
 
         InstanceScript* instance;
-
+        uint32 bossToSummon;
         uint32 uiChargeTimer;
         uint32 uiShieldBreakerTimer;
         uint32 uiBuffTimer;
@@ -299,6 +300,18 @@ public:
 
             DoMeleeAttackIfReady();
         }
+        void JustDied(Unit* /*killer*/) override
+        {                      
+            /*if (bossToSummon)
+            {
+                Position pos{ 735.81f, 661.92f, 412.39f, 4.714f};
+                TempSummon* boss = me->SummonCreature(bossToSummon, pos);       
+                instance->SetGuidData(DATA_GRAND_CHAMPION_1 + instance->GetData(GRAND_CHAMPION_SUMMONED), boss->GetGUID());
+                instance->SetData(GRAND_CHAMPION_SUMMONED, 0);
+            }*/
+            instance->SetData(BOSS_GRAND_CHAMPIONS_MOUNT, 0);
+        }
+        
     };
 
     CreatureAI* GetAI(Creature* creature) const override
@@ -326,9 +339,11 @@ public:
             uiPhase = 0;
             uiPhaseTimer = 0;
 
-            me->SetReactState(REACT_PASSIVE);
-            // THIS IS A HACK, SHOULD BE REMOVED WHEN THE EVENT IS FULL SCRIPTED
-            me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_IMMUNE_TO_PC);
+            me->SetReactState(REACT_PASSIVE);    
+            me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_NOT_SELECTABLE);
+
+            instance->SetGuidData(DATA_GRAND_CHAMPION_1 + instance->GetData(GRAND_CHAMPION_SUMMONED), creature->GetGUID());
+            instance->SetData(GRAND_CHAMPION_SUMMONED, 0);
         }
 
         void Initialize()
@@ -464,8 +479,10 @@ public:
             uiPhaseTimer = 0;
 
             me->SetReactState(REACT_PASSIVE);
-            // THIS IS A HACK, SHOULD BE REMOVED WHEN THE EVENT IS FULL SCRIPTED
-            me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_IMMUNE_TO_PC);
+            me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_NOT_SELECTABLE);
+
+            instance->SetGuidData(DATA_GRAND_CHAMPION_1 + instance->GetData(GRAND_CHAMPION_SUMMONED), creature->GetGUID());
+            instance->SetData(GRAND_CHAMPION_SUMMONED, 0);
         }
 
         void Initialize()
@@ -607,8 +624,10 @@ public:
             uiPhaseTimer = 0;
 
             me->SetReactState(REACT_PASSIVE);
-            // THIS IS A HACK, SHOULD BE REMOVED WHEN THE EVENT IS FULL SCRIPTED
-            me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_IMMUNE_TO_PC);
+            me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_NOT_SELECTABLE);
+
+            instance->SetGuidData(DATA_GRAND_CHAMPION_1 + instance->GetData(GRAND_CHAMPION_SUMMONED), creature->GetGUID());
+            instance->SetData(GRAND_CHAMPION_SUMMONED, 0);
         }
 
         void Initialize()
@@ -758,8 +777,10 @@ public:
             uiPhaseTimer = 0;
 
             me->SetReactState(REACT_PASSIVE);
-            // THIS IS A HACK, SHOULD BE REMOVED WHEN THE EVENT IS FULL SCRIPTED
-            me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_IMMUNE_TO_PC);
+            me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_NOT_SELECTABLE);
+
+            instance->SetGuidData(DATA_GRAND_CHAMPION_1 + instance->GetData(GRAND_CHAMPION_SUMMONED), creature->GetGUID());
+            instance->SetData(GRAND_CHAMPION_SUMMONED, 0);
         }
 
         void Initialize()
@@ -918,8 +939,10 @@ public:
             uiPhaseTimer = 0;
 
             me->SetReactState(REACT_PASSIVE);
-            // THIS IS A HACK, SHOULD BE REMOVED WHEN THE EVENT IS FULL SCRIPTED
-            me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_IMMUNE_TO_PC);
+            me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_NOT_SELECTABLE);
+
+            instance->SetGuidData(DATA_GRAND_CHAMPION_1 + instance->GetData(GRAND_CHAMPION_SUMMONED), creature->GetGUID());
+            instance->SetData(GRAND_CHAMPION_SUMMONED, 0);
         }
 
         void Initialize()

@@ -193,6 +193,7 @@ public:
                 damage = 0;
                 EnterEvadeMode();
                 me->setFaction(35);
+                me->GetMotionMaster()->MovePoint(0, 746.88f, 618.74f, 411.06f);
                 bDone = true;
             }
         }
@@ -321,6 +322,7 @@ public:
                 damage = 0;
                 EnterEvadeMode();
                 me->setFaction(35);
+                me->GetMotionMaster()->MovePoint(0, 746.88f, 618.74f, 411.06f);
                 bDone = true;
             }
         }

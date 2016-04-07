@@ -47,10 +47,11 @@ public:
             uiMovementDone = 0;
             uiGrandChampionsDeaths = 0;
             uiArgentSoldierDeaths = 0;
-
+            minorMountsDeath = 0;
+            grandChampionSummoned = 0;
             bDone = false;
 
-            memset(&m_auiEncounter, 0, sizeof(m_auiEncounter));
+            memset(&m_auiEncounter, 0, sizeof(m_auiEncounter));            
         }
 
         uint32 m_auiEncounter[MAX_ENCOUNTER];
@@ -58,6 +59,8 @@ public:
         uint16 uiMovementDone;
         uint16 uiGrandChampionsDeaths;
         uint8 uiArgentSoldierDeaths;
+        uint8 minorMountsDeath;
+        uint8 grandChampionSummoned;
 
         ObjectGuid uiAnnouncerGUID;
         ObjectGuid uiMainGateGUID;
@@ -69,7 +72,6 @@ public:
         ObjectGuid uiGrandChampion3GUID;
         ObjectGuid uiChampionLootGUID;
         ObjectGuid uiArgentChampionGUID;
-
         GuidList VehicleList;
 
         std::string str_data;
@@ -85,13 +87,12 @@ public:
             }
 
             return false;
-        }
+        }        
 
         void OnCreatureCreate(Creature* creature) override
         {
             Map::PlayerList const &players = instance->GetPlayers();
-            uint32 TeamInInstance = 0;
-
+            uint32 TeamInInstance = 0;            
             if (!players.isEmpty())
             {
                 if (Player* player = players.begin()->GetSource())
@@ -100,27 +101,21 @@ public:
 
             switch (creature->GetEntry())
             {
-                // Champions
-                case VEHICLE_MOKRA_SKILLCRUSHER_MOUNT:
-                    if (TeamInInstance == HORDE)
-                        creature->UpdateEntry(VEHICLE_MARSHAL_JACOB_ALERIUS_MOUNT);
+                //Prevent champions to be friendly when we join with a mixed group
+                case NPC_MOKRA:
+                case NPC_ERESSEA:
+                case NPC_RUNOK:
+                case NPC_ZULTORE:
+                case NPC_VISCERI:
+                case NPC_JACOB:
+                case NPC_AMBROSE:
+                case NPC_COLOSOS:
+                case NPC_JAELYNE:
+                case NPC_LANA:
+                {
+                    creature->setFaction(14);
                     break;
-                case VEHICLE_ERESSEA_DAWNSINGER_MOUNT:
-                    if (TeamInInstance == HORDE)
-                        creature->UpdateEntry(VEHICLE_AMBROSE_BOLTSPARK_MOUNT);
-                    break;
-                case VEHICLE_RUNOK_WILDMANE_MOUNT:
-                    if (TeamInInstance == HORDE)
-                        creature->UpdateEntry(VEHICLE_COLOSOS_MOUNT);
-                    break;
-                case VEHICLE_ZUL_TORE_MOUNT:
-                    if (TeamInInstance == HORDE)
-                        creature->UpdateEntry(VEHICLE_EVENSONG_MOUNT);
-                    break;
-                case VEHICLE_DEATHSTALKER_VESCERI_MOUNT:
-                    if (TeamInInstance == HORDE)
-                        creature->UpdateEntry(VEHICLE_LANA_STOUTHAMMER_MOUNT);
-                    break;
+                }
                 // Coliseum Announcer || Just NPC_JAEREN must be spawned.
                 case NPC_JAEREN:
                     uiAnnouncerGUID = creature->GetGUID();
@@ -156,12 +151,25 @@ public:
         {
             switch (uiType)
             {
+                case GRAND_CHAMPION_SUMMONED:
+                    {
+                        grandChampionSummoned++;
+                    }
+                    break;
                 case DATA_MOVEMENT_DONE:
                     uiMovementDone = uiData;
                     if (uiMovementDone == 3)
                     {
                         if (Creature* pAnnouncer =  instance->GetCreature(uiAnnouncerGUID))
                             pAnnouncer->AI()->SetData(DATA_IN_POSITION, 0);
+                    }
+                    break;
+                case BOSS_GRAND_CHAMPIONS_MOUNT:
+                    minorMountsDeath++;
+                    if (minorMountsDeath == 3)
+                    {
+                        if (Creature* pAnnouncer = instance->GetCreature(uiAnnouncerGUID))
+                            pAnnouncer->AI()->SetData(DATA_CHAMPIONS_MOUNT_DEATH, 0);
                     }
                     break;
                 case BOSS_GRAND_CHAMPIONS:
@@ -180,7 +188,8 @@ public:
                             {
                                 pAnnouncer->GetMotionMaster()->MovePoint(0, 748.309f, 619.487f, 411.171f);
                                 pAnnouncer->SetFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_GOSSIP);
-                                pAnnouncer->SummonGameObject(instance->IsHeroic()? GO_CHAMPIONS_LOOT_H : GO_CHAMPIONS_LOOT, 746.59f, 618.49f, 411.09f, 1.42f, 0, 0, 0, 0, 90000);
+                                GameObject* pChest = pAnnouncer->SummonGameObject(instance->IsHeroic()? GO_CHAMPIONS_LOOT_H : GO_CHAMPIONS_LOOT, 746.59f, 618.49f, 411.09f, 1.42f, 0, 0, 0, 0, 90000);
+                                pChest->RemoveFlag(GAMEOBJECT_FLAGS, GO_FLAG_NOT_SELECTABLE);
                             }
                         }
                     }
@@ -190,8 +199,8 @@ public:
                     if (uiArgentSoldierDeaths == 9)
                     {
                         if (Creature* pBoss =  instance->GetCreature(uiArgentChampionGUID))
-                        {
-                            pBoss->GetMotionMaster()->MovePoint(0, 746.88f, 618.74f, 411.06f);
+                        {                            
+                            //pBoss->GetMotionMaster()->MovePoint(0, 746.88f, 618.74f, 411.06f);
                             pBoss->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
                             pBoss->SetReactState(REACT_AGGRESSIVE);
                         }
@@ -203,7 +212,8 @@ public:
                     {
                         pAnnouncer->GetMotionMaster()->MovePoint(0, 748.309f, 619.487f, 411.171f);
                         pAnnouncer->SetFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_GOSSIP);
-                        pAnnouncer->SummonGameObject(instance->IsHeroic()? GO_EADRIC_LOOT_H : GO_EADRIC_LOOT, 746.59f, 618.49f, 411.09f, 1.42f, 0, 0, 0, 0, 90000);
+                        GameObject* pChest = pAnnouncer->SummonGameObject(instance->IsHeroic()? GO_EADRIC_LOOT_H : GO_EADRIC_LOOT, 746.59f, 618.49f, 411.09f, 1.42f, 0, 0, 0, 0, 90000);
+                        pChest->RemoveFlag(GAMEOBJECT_FLAGS, GO_FLAG_NOT_SELECTABLE);
                     }
                     break;
                 case BOSS_ARGENT_CHALLENGE_P:
@@ -212,7 +222,8 @@ public:
                     {
                         pAnnouncer->GetMotionMaster()->MovePoint(0, 748.309f, 619.487f, 411.171f);
                         pAnnouncer->SetFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_GOSSIP);
-                        pAnnouncer->SummonGameObject(instance->IsHeroic()? GO_PALETRESS_LOOT_H : GO_PALETRESS_LOOT, 746.59f, 618.49f, 411.09f, 1.42f, 0, 0, 0, 0, 90000);
+                        GameObject* pChest = pAnnouncer->SummonGameObject(instance->IsHeroic()? GO_PALETRESS_LOOT_H : GO_PALETRESS_LOOT, 746.59f, 618.49f, 411.09f, 1.42f, 0, 0, 0, 0, 90000);
+                        pChest->RemoveFlag(GAMEOBJECT_FLAGS, GO_FLAG_NOT_SELECTABLE);
                     }
                     break;
             }
@@ -232,6 +243,8 @@ public:
 
                 case DATA_MOVEMENT_DONE: return uiMovementDone;
                 case DATA_ARGENT_SOLDIER_DEFEATED: return uiArgentSoldierDeaths;
+
+                case GRAND_CHAMPION_SUMMONED: return grandChampionSummoned;
             }
 
             return 0;
@@ -247,6 +260,10 @@ public:
                 case DATA_GRAND_CHAMPION_1: return uiGrandChampion1GUID;
                 case DATA_GRAND_CHAMPION_2: return uiGrandChampion2GUID;
                 case DATA_GRAND_CHAMPION_3: return uiGrandChampion3GUID;
+
+                case DATA_GRAND_CHAMPION_VEHICLE_1: return uiGrandChampionVehicle1GUID;
+                case DATA_GRAND_CHAMPION_VEHICLE_2: return uiGrandChampionVehicle2GUID;
+                case DATA_GRAND_CHAMPION_VEHICLE_3: return uiGrandChampionVehicle3GUID;
             }
 
             return ObjectGuid::Empty;
@@ -264,6 +281,15 @@ public:
                     break;
                 case DATA_GRAND_CHAMPION_3:
                     uiGrandChampion3GUID = uiData;
+                    break;
+                case DATA_GRAND_CHAMPION_VEHICLE_1: 
+                    uiGrandChampionVehicle1GUID = uiData;
+                    break;
+                case DATA_GRAND_CHAMPION_VEHICLE_2: 
+                    uiGrandChampionVehicle2GUID = uiData;
+                    break;
+                case DATA_GRAND_CHAMPION_VEHICLE_3: 
+                    uiGrandChampionVehicle3GUID = uiData;
                     break;
             }
         }
