@@ -2248,7 +2248,7 @@ void AuraEffect::HandleAuraModDisarm(AuraApplication const* aurApp, uint8 mode, 
     {
         target->SetFlag(field, flag);
 
-        // [AZTH]
+        // [AZTH] Shin: [hack?] fix for bladestorm
         Unit::AuraMap const& auras = target->GetOwnedAuras();
         for (Unit::AuraMap::const_iterator itr = auras.begin(); itr != auras.end(); ++itr)
         {
