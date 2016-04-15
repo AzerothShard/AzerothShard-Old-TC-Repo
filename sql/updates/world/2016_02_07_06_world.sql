@@ -1,4 +1,4 @@
---
+-- 
 -- Diremaul North Rndmemotes
 -- Gordok Mauler SAI
 SET @ENTRY := 11442;

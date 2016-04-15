@@ -1,13 +1,13 @@
 SET @Guid := 52030;
 
 DELETE FROM `creature` WHERE `id` IN(37964,37981,36817);
-INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `VerifiedBuild`) VALUES
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `VerifiedBuild`) VALUES 
 (@Guid, 37964, 0, 0, 0, 1, 1, 0, 0, 1484.662, 348.019, -64.54687, 0.8377581, 120, 0, 0, 1, 0, 0, 0, 0, 0, 0),
 (@Guid+1, 37981, 1, 0, 0, 1, 1, 0, 0, 9843.134, 2430.733, 1313.6, 5.5676, 120, 0, 0, 1, 0, 0, 0, 0, 0, 0),
 (@Guid+2, 36817, 0, 0, 0, 1, 1, 0, 0, -8796.021, 775.0364, 95.22309, 0.01745329, 120, 0, 0, 1, 0, 0, 0, 0, 0, 0);
 
 DELETE FROM `game_event_creature` WHERE `eventEntry`=8 AND `guid` BETWEEN @Guid AND @Guid+2;
-INSERT INTO `game_event_creature` (`eventEntry`, `guid`) VALUES
+INSERT INTO `game_event_creature` (`eventEntry`, `guid`) VALUES 
 (8, @Guid),
 (8, @Guid+1),
 (8, @Guid+2);
@@ -20,7 +20,7 @@ UPDATE `creature_template` SET `ainame`='SmartAI', `scriptname`='' WHERE `entry`
 
 DELETE FROM `smart_scripts` WHERE `entryorguid` IN(37966,37964,37980,37981,36817,36812) AND `source_type`=0;
 
-INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`) VALUES
+INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`) VALUES 
 (37964, 0, 0, 0, 1, 0, 100, 0, 0, 0, 20000, 20000, 11, 70846, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, '[DND] Love Boat Summoner 02 - OOC - Cast Love Boat Summon'),
 (37981, 0, 0, 0, 1, 0, 100, 0, 0, 0, 20000, 20000, 11, 70863, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, '[DND] Love Boat Summoner 03 - OOC - Cast Love Boat Summon'),
 (36817, 0, 0, 0, 1, 0, 100, 0, 0, 0, 20000, 20000, 11, 69371, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, '[DND] Love Boat Summoner - OOC - Cast Love Boat Summon'),
@@ -53,14 +53,14 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 (36812, 0, 7, 0, 28, 0, 100, 0, 0, 0, 0, 0, 28, 62011, 0, 0, 0, 0, 0, 17, 0, 20, 0, 0, 0, 0, 0, 'Stormwind Love Boat - On Pasenger Removed - Remove Aura');
 
 DELETE FROM `npc_spellclick_spells` WHERE `npc_entry`IN(37966,37980,36812);
-INSERT INTO `npc_spellclick_spells` (`npc_entry`, `spell_id`, `cast_flags`, `user_type`) VALUES
+INSERT INTO `npc_spellclick_spells` (`npc_entry`, `spell_id`, `cast_flags`, `user_type`) VALUES 
 (37966, 69342, 1, 0),
 (37980, 69342, 1, 0),
 (36812, 69342, 1, 0);
 
 
 DELETE FROM `waypoints` WHERE `entry` IN(37966,37980,36812);
-INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES
+INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES 
 (37966, 1, 1485.332, 348.7621, -64.54687, 'Undercity Love Boat'),
 (37966, 2, 1487.063, 350.9445, -64.86743, 'Undercity Love Boat'),
 (37966, 3, 1494.434, 360.592, -64.86742, 'Undercity Love Boat'),

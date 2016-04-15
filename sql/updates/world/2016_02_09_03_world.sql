@@ -1,7 +1,7 @@
---
+-- 
 -- DB/Quest: Translation to Ello
 DELETE FROM `waypoints` WHERE `entry`=412;
-INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`) VALUES
+INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`) VALUES 
 (412, 1, -10290.1, 73.7148, 38.849),
 (412, 2, -10290.4, 81.547, 38.7702),
 (412, 3, -10283.2, 86.6661, 38.7694),
@@ -117,7 +117,7 @@ INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type
 (@ENTRY,0,8,0,61,0,100,0,91,412,0,0,89,20,0,0,0,0,0,1,0,0,0,0,0,0,0,"Stitches - On Waypoint 91 Reached - Start Random Movement");
 
 DELETE FROM `creature_text` WHERE `entry` IN (468, 412);
-INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`, `BroadcastTextId`) VALUES
+INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`, `BroadcastTextId`) VALUES 
 (468, 0, 0, 'An abomination of the undead is approaching!', 14, 0, 100, 0, 0, 0, 'Guard', 89),
 (468, 1, 0, 'The abomination has overrun the Night Watch camp! Quickly, we must intercept it before it reaches town!', 14, 0, 100, 0, 0, 0, 'Guard', 90),
 (412, 0, 0, 'ROARRRRR!!', 14, 0, 100, 0, 0, 0, 'Stitches', 278),

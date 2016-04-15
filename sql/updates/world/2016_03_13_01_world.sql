@@ -1,4 +1,4 @@
--- Fix quests Incense for the Festival Scorchlings and Incense for the Summer Scorchlings
+-- Fix quests Incense for the Festival Scorchlings and Incense for the Summer Scorchlings 
 DELETE FROM `creature_queststarter` WHERE `quest`=11964;
 -- SAI for Festival Talespinner
 UPDATE `creature_template` SET `AIName`= 'SmartAI' WHERE `entry`=16818;

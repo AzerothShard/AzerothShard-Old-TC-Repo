@@ -26,13 +26,13 @@ INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type
 (2735500,9,6,0,0,0,100,0,0,0,0,0,49,0,0,0,0,0,0,12,1,0,0,0,0,0,0,'Rothin the Decaying - Script - Attack Target');
 
 DELETE FROM `creature_template_addon` WHERE `entry`=27355;
-INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES
+INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES 
 (27355, 0, 0, 0x0, 0x1, 0, '48695'); -- -- 27355 - 48695 - 48695
 
 DELETE FROM `conditions` WHERE `SourceTypeOrReferenceId`=13 AND `SourceEntry`=48685;
 DELETE FROM `conditions` WHERE `SourceTypeOrReferenceId`=22 AND `SourceEntry`=27355;
 
-INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorType`, `ErrorTextId`, `ScriptName`, `Comment`) VALUES
+INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorType`, `ErrorTextId`, `ScriptName`, `Comment`) VALUES 
 (13, 1, 48685, 0, 0, 31, 0, 3, 27418, 0, 0, 0, 0, '', 'Imbue Power targets Rothins Spell Bunny'),
 (13, 1, 48685, 0, 1, 31, 0, 3, 26475, 0, 0, 0, 0, '', 'Imbue Power targets Magmawyrm'),
 (22, 10, 27355, 0, 0, 36, 1, 0, 0, 0, 0, 0, 0, '', 'Only execute SAI if Rothin the Decaying alive'),

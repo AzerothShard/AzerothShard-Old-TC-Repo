@@ -18,12 +18,6 @@ if(CMAKE_COMPILER_IS_GNUCXX AND NOT MINGW)
   add_definitions(-fno-delete-null-pointer-checks)
 endif()
 
-
-set(sources_windows_Debugging
-  ${CMAKE_SOURCE_DIR}/src/common/Debugging/WheatyExceptionReport.cpp
-  ${CMAKE_SOURCE_DIR}/src/common/Debugging/WheatyExceptionReport.h
-)
-
 # [AZTH]
 include(${CMAKE_SOURCE_DIR}/azth/CMakeLists.txt)
 

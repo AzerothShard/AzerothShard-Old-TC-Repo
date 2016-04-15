@@ -1,7 +1,7 @@
---
+-- 
 -- DB/Quest: King of the Foulweald
 DELETE FROM `spell_script_names` WHERE `spell_id`=20783;
-INSERT INTO `spell_script_names` (`spell_id`, `ScriptName`) VALUES
+INSERT INTO `spell_script_names` (`spell_id`, `ScriptName`) VALUES 
 (20783, 'spell_destroy_karangs_banner');
 
 -- remove this stuff - eventscripts will be running even without gameobject

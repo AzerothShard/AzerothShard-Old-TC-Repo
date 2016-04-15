@@ -4,7 +4,7 @@ SET @OGUID := 82917;
 
 
 DELETE FROM `spell_area` WHERE `spell`=58139 AND `area`IN(4530,4531);
-INSERT INTO `spell_area` (`spell`, `area`, `quest_start`, `quest_end`, `aura_spell`, `racemask`, `gender`, `autocast`, `quest_start_status`, `quest_end_status`) VALUES
+INSERT INTO `spell_area` (`spell`, `area`, `quest_start`, `quest_end`, `aura_spell`, `racemask`, `gender`, `autocast`, `quest_start_status`, `quest_end_status`) VALUES 
 (58139, 4531, 13144, 0, 0, 0, 2, 1, 64, 11), -- The Fleshweks after Killing two scourge with one skeleton
 (58139, 4530, 13144, 0, 0, 0, 2, 1, 64, 11); -- Sanctumn on renaimation after Killing two scourge with one skeleton
 
@@ -142,14 +142,14 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `bytes2`, `au
 
 DELETE FROM `creature_addon` WHERE `guid` IN(@CGUID+41,@CGUID+42,@CGUID+43,@CGUID+47,@CGUID+48,@CGUID+49,@CGUID+50,@CGUID+51,@CGUID+52);
 INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `bytes2`, `auras`) VALUES
-(@CGUID+41, 0, 0x0, 0x1, ''),
-(@CGUID+42, 0, 0x0, 0x1, ''),
-(@CGUID+43, 0, 0x0, 0x1, ''),
-(@CGUID+47, 0, 0x0, 0x1, ''),
-(@CGUID+48, 0, 0x0, 0x1, ''),
-(@CGUID+49, 0, 0x0, 0x1, ''),
-(@CGUID+50, 0, 0x0, 0x1, ''),
-(@CGUID+51, 0, 0x0, 0x1, ''),
+(@CGUID+41, 0, 0x0, 0x1, ''), 
+(@CGUID+42, 0, 0x0, 0x1, ''), 
+(@CGUID+43, 0, 0x0, 0x1, ''), 
+(@CGUID+47, 0, 0x0, 0x1, ''), 
+(@CGUID+48, 0, 0x0, 0x1, ''), 
+(@CGUID+49, 0, 0x0, 0x1, ''), 
+(@CGUID+50, 0, 0x0, 0x1, ''), 
+(@CGUID+51, 0, 0x0, 0x1, ''), 
 (@CGUID+52, 0, 0x0, 0x1, '');
 
 UPDATE `creature_template` SET `ainame`='SmartAI' WHERE `entry` IN(30703,30704,31015);

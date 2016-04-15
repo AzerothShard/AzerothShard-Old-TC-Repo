@@ -1,4 +1,4 @@
---
+-- 
 -- Arred
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 0 WHERE `guid` = 63008;
 UPDATE `creature_template` SET `MovementType` = 0 WHERE `Entry` = 17512;
@@ -39,7 +39,7 @@ INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type
 (@ENTRY,9,2,0,0,0,100,0,12000,12000,0,0,5,273,0,0,0,0,0,1,0,0,0,0,0,0,0,"On Script - Play Emote 273");
 
 DELETE FROM `waypoints` WHERE `entry`=17512;
-INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES
+INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES 
 (17512,1,-3788.04,-11547.3,-134.842, 'Arred'),
 (17512,2,-3789.79,-11543.9,-134.849, 'Arred'),
 (17512,3,-3793.72,-11542.8,-134.892, 'Arred'),

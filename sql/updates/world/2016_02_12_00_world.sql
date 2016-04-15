@@ -1,4 +1,4 @@
---
+-- 
 -- Spawn creature ID 16399 Bloodsail Traitor:
 SET @CGUID := 1528; -- selected by TC team
 

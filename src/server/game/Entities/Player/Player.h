@@ -147,7 +147,6 @@ typedef std::unordered_map<uint32, PlayerTalent*> PlayerTalentMap;
 typedef std::unordered_map<uint32, PlayerSpell*> PlayerSpellMap;
 typedef std::list<SpellModifier*> SpellModList;
 
-
 typedef std::unordered_map<uint32 /*instanceId*/, time_t/*releaseTime*/> InstanceTimeMap;
 
 enum TrainerSpellState
@@ -1904,7 +1903,7 @@ class Player : public Unit, public GridObject<Player>
         uint32 GetMaxPersonalArenaRatingRequirement(uint32 minarenaslot) const;
         void SetHonorPoints(uint32 value);
         void SetArenaPoints(uint32 value);
-        
+
         // duel health and mana reset methods
         void SaveHealthBeforeDuel() { healthBeforeDuel = GetHealth(); }
         void SaveManaBeforeDuel() { manaBeforeDuel = GetPower(POWER_MANA); }

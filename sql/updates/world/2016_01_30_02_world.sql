@@ -1,4 +1,4 @@
-SET @CGUID   := 106855;
+SET @CGUID   := 106855; 
 
 UPDATE `creature_template` SET `unit_flags`=33536 WHERE  `entry`=31029;
 UPDATE `creature_template` SET `unit_flags`=33088 WHERE  `entry`=31016;
@@ -9,7 +9,7 @@ UPDATE `creature_template` SET `unit_flags`=33555200 WHERE  `entry`=31077;
 UPDATE `creature_template_addon` SET `auras`='0' WHERE  `entry`=31083;
 
 DELETE FROM `conditions` WHERE `SourceTypeOrReferenceId`=13 AND `SourceEntry` IN(4020);
-INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorType`, `ErrorTextId`, `ScriptName`, `Comment`) VALUES
+INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorType`, `ErrorTextId`, `ScriptName`, `Comment`) VALUES 
 (13, 1, 4020, 0, 0, 31, 0, 3, 31077, 0, 0, 0, 0, '', '');
 
 DELETE FROM `creature` WHERE `id`=31077;
@@ -45,7 +45,7 @@ INSERT INTO `vehicle_template_accessory` (`entry`, `accessory_entry`, `seat_id`,
 (31050, 31016, 0, 0, '31050 - 31016', 6, 30000); -- 31050 - 31016
 
 DELETE FROM `npc_spellclick_spells` WHERE `npc_entry`=31050;
-INSERT INTO `npc_spellclick_spells` (`npc_entry`, `spell_id`, `cast_flags`, `user_type`) VALUES
+INSERT INTO `npc_spellclick_spells` (`npc_entry`, `spell_id`, `cast_flags`, `user_type`) VALUES 
 (31050, 46598, 1, 0);
 
 DELETE FROM `spell_group` WHERE `id`=4307;
@@ -71,7 +71,7 @@ INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `bytes2`, `au
 DELETE FROM `event_scripts` WHERE `id`=20108;
 INSERT INTO `event_scripts` (`id`,`delay`,`command`,`datalong`,`datalong2`,`dataint`,`x`,`y`,`z`,`o`) VALUES
 (20108,0,10,31029,1800000,0,7116.824,4308.362,883.3842,2.46227),  -- Possessed Vardmadra 0xF130793500719D55
-(20108,0,16,14969,0,0,0,0,0,0);
+(20108,0,16,14969,0,0,0,0,0,0);  
 
 UPDATE `gameobject_template` SET `AIName`='SmartGameObjectAI' WHERE  `entry`=193028;
 UPDATE `creature_template` SET `AIName`='SmartAI' WHERE  `entry`IN(31016,31029,31030,31050,31083,31087,31077);
@@ -80,7 +80,7 @@ DELETE FROM `smart_scripts` WHERE `source_type`=0 AND `entryorguid` BETWEEN -@CG
 DELETE FROM `smart_scripts` WHERE `source_type`=9 AND `entryorguid`IN(3105000,3105001,3101600,3108300,3108301,19302800);
 DELETE FROM `smart_scripts` WHERE `source_type`=1 AND `entryorguid`IN(193028);
 
-INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`) VALUES
+INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`) VALUES 
 (31077, 0, 0, 0, 8, 0, 100, 0, 4020, 0, 0, 0, 11, 4307, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Safirdrangs Chill target - On Spell Hit Safirdrangs Chill - Cast Safirdrangs Chill'),
 (31077, 0, 1, 2, 25, 0, 100, 0, 0, 0, 0, 0, 19, 256, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Safirdrangs Chill target - On Reset - Set Unit Flags'),
 (31077, 0, 2, 0, 61, 0, 100, 0, 0, 0, 0, 0, 2, 14, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Safirdrangs Chill target - On Reset - Set Faction'),
@@ -91,45 +91,45 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 (31083, 0, 3, 0, 40, 0, 100, 0, 4, 31083, 0, 0, 66, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 4.468043, 'The Lich King - On Reached WP4 (Path 1) - Set Orientation'),
 (31083, 0, 4, 5, 40, 0, 100, 0, 2, 31083, 0, 0, 54, 35600, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - On Reached WP2 (Path 1) - Set Pause WP'),
 (31083, 0, 5, 0, 61, 0, 100, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - On Reached WP2 (Path 1) - Face Possessed Vardmadra'),
-(3108300, 9, 0, 0, 0, 0, 100, 0, 1000, 1000, 0, 0, 11, 34427, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Cast Ethereal Teleport'),
-(3108300, 9, 1, 0, 0, 0, 100, 0, 3000, 3000, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+0, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'),
-(3108300, 9, 2, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+1, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'),
-(3108300, 9, 3, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+2, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'),
-(3108300, 9, 4, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+3, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'),
-(3108300, 9, 5, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+4, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'),
-(3108300, 9, 6, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+5, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'),
-(3108300, 9, 7, 0, 0, 0, 100, 0, 0, 0, 0, 0, 11, 53274, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Cast Icebound Visage'),
-(3108300, 9, 8, 0, 0, 0, 100, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Face Possessed Vardmadra'),
-(3108300, 9, 9, 0, 0, 0, 100, 0, 4000, 4000, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 0 '),
-(3108300, 9, 10, 0, 0, 0, 100, 0, 4000, 4000, 0, 0, 45, 3, 3, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Set Data on Possessed Vardmadra'),
-(3108300, 9, 11, 0, 0, 0, 100, 0, 2000, 2000, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 1 '),
-(3108300, 9, 12, 0, 0, 0, 100, 0, 0, 0, 0, 0, 53, 0, 31083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Start WP '),
-(3108300, 9, 13, 0, 0, 0, 100, 0, 9000, 9000, 0, 0, 1, 2, 0, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 2 on Possessed Vardmadra '),
-(3108300, 9, 14, 0, 0, 0, 100, 0, 4000, 4000, 0, 0, 1, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 2 '),
-(3108300, 9, 15, 0, 0, 0, 100, 0, 9000, 9000, 0, 0, 11, 42904, 0, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Cast Cosmetic - Combat Special Attack 2H (Whirlwind SFX) '),
-(3108300, 9, 16, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 1, 1, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Set Data on Possessed Vardmadra '),
-(3108300, 9, 17, 0, 0, 0, 100, 0, 600, 600, 0, 0, 45, 5, 5, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Set Data on Possessed Vardmadra '),
-(3108300, 9, 18, 0, 0, 0, 100, 0, 4000, 4000, 0, 0, 4, 15714, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Play sound 15714'),
-(3108300, 9, 19, 0, 0, 0, 100, 0, 3000, 3000, 0, 0, 1, 3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 3 '),
-(3108300, 9, 20, 0, 0, 0, 100, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 19, 31016, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Face Overthane Balargarde <Master of Jotunheim>'),
-(3108300, 9, 21, 0, 0, 0, 100, 0, 5000, 5000, 0, 0, 1, 6, 0, 0, 0, 0, 0, 19, 31016, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 6 on Overthane Balargarde <Master of Jotunheim> '),
-(3108300, 9, 22, 0, 0, 0, 100, 0, 4000, 4000, 0, 0, 1, 4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 4 '),
-(3108300, 9, 23, 0, 0, 0, 100, 0, 7000, 7000, 0, 0, 1, 7, 0, 0, 0, 0, 0, 19, 31016, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 7 on Overthane Balargarde <Master of Jotunheim> '),
-(3108300, 9, 24, 0, 0, 0, 100, 0, 1000, 1000, 0, 0, 45, 3, 3, 0, 0, 0, 0, 19, 31016, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Set Data on Overthane Balargarde <Master of Jotunheim> '),
-(3108301, 9, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 4, 4, 0, 0, 0, 0, 19, 31050, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Set Data on Safirdrang '),
-(3108301, 9, 1, 0, 0, 0, 100, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 21, 100, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Face Player'),
-(3108301, 9, 2, 0, 0, 0, 100, 0, 3000, 3000, 0, 0, 1, 5, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Say Line 5'),
-(3108301, 9, 3, 0, 0, 0, 100, 0, 8000, 8000, 0, 0, 1, 6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Say Line 6'),
-(3108301, 9, 4, 0, 0, 0, 100, 0, 8000, 8000, 0, 0, 11, 34427, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Cast Ethereal Teleport'),
-(3108301, 9, 5, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+0, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'),
-(3108301, 9, 6, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+1, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'),
-(3108301, 9, 7, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+2, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'),
-(3108301, 9, 8, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+3, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'),
-(3108301, 9, 9, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+4, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'),
-(3108301, 9, 10, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+5, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'),
-(3108301, 9, 11, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 19, 31050, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Safirdrang'),
-(3108301, 9, 12, 0, 0, 0, 100, 0, 0, 0, 0, 0, 41, 0, 0, 0, 0, 0, 0, 19, 31087, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Lady Nightswood'),
-(3108301, 9, 13, 0, 0, 0, 100, 0, 0, 0, 0, 0, 41, 1000, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn'),
+(3108300, 9, 0, 0, 0, 0, 100, 0, 1000, 1000, 0, 0, 11, 34427, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Cast Ethereal Teleport'), 
+(3108300, 9, 1, 0, 0, 0, 100, 0, 3000, 3000, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+0, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'), 
+(3108300, 9, 2, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+1, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'), 
+(3108300, 9, 3, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+2, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'), 
+(3108300, 9, 4, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+3, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'), 
+(3108300, 9, 5, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+4, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'), 
+(3108300, 9, 6, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 3, 3, 0, 0, 0, 0, 10, @CGUID+5, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script - Despawn Balargarde Elite'), 
+(3108300, 9, 7, 0, 0, 0, 100, 0, 0, 0, 0, 0, 11, 53274, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Cast Icebound Visage'), 
+(3108300, 9, 8, 0, 0, 0, 100, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Face Possessed Vardmadra'), 
+(3108300, 9, 9, 0, 0, 0, 100, 0, 4000, 4000, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 0 '), 
+(3108300, 9, 10, 0, 0, 0, 100, 0, 4000, 4000, 0, 0, 45, 3, 3, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Set Data on Possessed Vardmadra'), 
+(3108300, 9, 11, 0, 0, 0, 100, 0, 2000, 2000, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 1 '), 
+(3108300, 9, 12, 0, 0, 0, 100, 0, 0, 0, 0, 0, 53, 0, 31083, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Start WP '), 
+(3108300, 9, 13, 0, 0, 0, 100, 0, 9000, 9000, 0, 0, 1, 2, 0, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 2 on Possessed Vardmadra '), 
+(3108300, 9, 14, 0, 0, 0, 100, 0, 4000, 4000, 0, 0, 1, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 2 '), 
+(3108300, 9, 15, 0, 0, 0, 100, 0, 9000, 9000, 0, 0, 11, 42904, 0, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Cast Cosmetic - Combat Special Attack 2H (Whirlwind SFX) '), 
+(3108300, 9, 16, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 1, 1, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Set Data on Possessed Vardmadra '), 
+(3108300, 9, 17, 0, 0, 0, 100, 0, 600, 600, 0, 0, 45, 5, 5, 0, 0, 0, 0, 19, 31029, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Set Data on Possessed Vardmadra '), 
+(3108300, 9, 18, 0, 0, 0, 100, 0, 4000, 4000, 0, 0, 4, 15714, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Play sound 15714'), 
+(3108300, 9, 19, 0, 0, 0, 100, 0, 3000, 3000, 0, 0, 1, 3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 3 '), 
+(3108300, 9, 20, 0, 0, 0, 100, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 19, 31016, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Face Overthane Balargarde <Master of Jotunheim>'), 
+(3108300, 9, 21, 0, 0, 0, 100, 0, 5000, 5000, 0, 0, 1, 6, 0, 0, 0, 0, 0, 19, 31016, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 6 on Overthane Balargarde <Master of Jotunheim> '), 
+(3108300, 9, 22, 0, 0, 0, 100, 0, 4000, 4000, 0, 0, 1, 4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 4 '), 
+(3108300, 9, 23, 0, 0, 0, 100, 0, 7000, 7000, 0, 0, 1, 7, 0, 0, 0, 0, 0, 19, 31016, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Say Line 7 on Overthane Balargarde <Master of Jotunheim> '), 
+(3108300, 9, 24, 0, 0, 0, 100, 0, 1000, 1000, 0, 0, 45, 3, 3, 0, 0, 0, 0, 19, 31016, 0, 0, 0, 0, 0, 0, 'The Lich King - Script - Set Data on Overthane Balargarde <Master of Jotunheim> '), 
+(3108301, 9, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 4, 4, 0, 0, 0, 0, 19, 31050, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Set Data on Safirdrang '), 
+(3108301, 9, 1, 0, 0, 0, 100, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 21, 100, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Face Player'), 
+(3108301, 9, 2, 0, 0, 0, 100, 0, 3000, 3000, 0, 0, 1, 5, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Say Line 5'), 
+(3108301, 9, 3, 0, 0, 0, 100, 0, 8000, 8000, 0, 0, 1, 6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Say Line 6'), 
+(3108301, 9, 4, 0, 0, 0, 100, 0, 8000, 8000, 0, 0, 11, 34427, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Cast Ethereal Teleport'), 
+(3108301, 9, 5, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+0, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'), 
+(3108301, 9, 6, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+1, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'), 
+(3108301, 9, 7, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+2, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'), 
+(3108301, 9, 8, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+3, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'), 
+(3108301, 9, 9, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+4, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'), 
+(3108301, 9, 10, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 10, @CGUID+5, 31030, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Balargarde Elite'), 
+(3108301, 9, 11, 0, 0, 0, 100, 0, 0, 0, 0, 0, 45, 2, 2, 0, 0, 0, 0, 19, 31050, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Safirdrang'), 
+(3108301, 9, 12, 0, 0, 0, 100, 0, 0, 0, 0, 0, 41, 0, 0, 0, 0, 0, 0, 19, 31087, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn Lady Nightswood'), 
+(3108301, 9, 13, 0, 0, 0, 100, 0, 0, 0, 0, 0, 41, 1000, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'The Lich King - Script 2 - Despawn'), 
 (31087, 0, 0, 0, 1, 0, 100, 1, 20000, 20000, 0, 0, 53, 1, 31087, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Lady Nightswood - OOC (No repeat) - Start WP'),
 (31087, 0, 1, 0, 40, 0, 100, 0, 3, 31087, 0, 0, 41, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Lady Nightswood - On Reached WP3 - Despawn'),
 (31087, 0, 2, 0, 54, 0, 100, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 19, 31083, 0, 0, 0, 0, 0, 0, 'Lady Nightswood - On Just Summoned - Face The Lich King'),
@@ -164,17 +164,17 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 (31016, 0, 29, 32, 61, 0, 100, 0, 0, 0, 0, 0, 45, 1, 1, 0, 0, 0, 0, 14, 62011, 193028, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Link - Set Data on War Horn of Jotunheim'),
 (31016,0,31,0,0,2,100,0,3000,5000,13000,14000,45,3,3,0,0,0,0,19,31050,0,0,0,0,0,0,"Overthane Balargarde - In Combat (Phase 2) - Set Data on Safirdrang"),
 (31016, 0, 32, 0, 61, 0, 100, 0, 0, 0, 0, 0, 41, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - On Agro - Set Phase 1'),
-(31016, 0, 33, 0, 61, 0, 100, 0, 0, 0, 0, 0, 91, 8, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Remove Bytes 1'),
-(31016, 0, 34, 0, 0, 4, 100, 0, 1000, 1000, 1000, 1000, 66, 0, 0, 0, 0, 0, 0, 19, 31083, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - IC (Phase 3) - Face the Lich King'),
-(3101600, 9, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 22, 3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Set Phase 3'),
-(3101600, 9, 1, 0, 0, 0, 100, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Stop Attack'),
-(3101600, 9, 2, 0, 0, 0, 100, 0, 0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Disable Combat Movement'),
-(3101600, 9, 3, 0, 0, 0, 100, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Say Line 5'),
-(3101600, 9, 4, 0, 0, 0, 100, 0, 0, 0, 0, 0, 12, 31083, 8, 0, 0, 0, 0, 8, 0, 0, 0, 7088.768, 4385.59, 872.4484, 4.468043, 'Overthane Balargarde <Master of Jotunheim> - Script - Summon The Lich King'),
-(3101600, 9, 5, 0, 0, 0, 100, 0, 0, 0, 0, 0, 18, 33554432, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Add Unit Flags UNIT_FLAG_NOT_SELECTABLE'),
-(3101600, 9, 6, 0, 0, 0, 100, 0, 0, 0, 0, 0, 90, 8, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Set Bytes 1'),
-(3101600, 9, 7, 0, 0, 0, 100, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 19, 31083, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Face the Lich King'),
-(3101600, 9, 8, 0, 0, 0, 100, 0, 100, 100, 0, 0, 19, 33554432, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Remove Unit Flags UNIT_FLAG_NOT_SELECTABLE'),
+(31016, 0, 33, 0, 61, 0, 100, 0, 0, 0, 0, 0, 91, 8, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Remove Bytes 1'), 
+(31016, 0, 34, 0, 0, 4, 100, 0, 1000, 1000, 1000, 1000, 66, 0, 0, 0, 0, 0, 0, 19, 31083, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - IC (Phase 3) - Face the Lich King'), 
+(3101600, 9, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 22, 3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Set Phase 3'), 
+(3101600, 9, 1, 0, 0, 0, 100, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Stop Attack'), 
+(3101600, 9, 2, 0, 0, 0, 100, 0, 0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Disable Combat Movement'), 
+(3101600, 9, 3, 0, 0, 0, 100, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Say Line 5'), 
+(3101600, 9, 4, 0, 0, 0, 100, 0, 0, 0, 0, 0, 12, 31083, 8, 0, 0, 0, 0, 8, 0, 0, 0, 7088.768, 4385.59, 872.4484, 4.468043, 'Overthane Balargarde <Master of Jotunheim> - Script - Summon The Lich King'), 
+(3101600, 9, 5, 0, 0, 0, 100, 0, 0, 0, 0, 0, 18, 33554432, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Add Unit Flags UNIT_FLAG_NOT_SELECTABLE'), 
+(3101600, 9, 6, 0, 0, 0, 100, 0, 0, 0, 0, 0, 90, 8, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Set Bytes 1'), 
+(3101600, 9, 7, 0, 0, 0, 100, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 19, 31083, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Face the Lich King'), 
+(3101600, 9, 8, 0, 0, 0, 100, 0, 100, 100, 0, 0, 19, 33554432, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Overthane Balargarde <Master of Jotunheim> - Script - Remove Unit Flags UNIT_FLAG_NOT_SELECTABLE'), 
 (31029, 0, 0, 0, 54, 0, 100, 0, 0, 0, 0, 0, 53, 1, 31029, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Possessed Vardmadra - On Just Summoned - Start WP'),
 (31029, 0, 1, 2, 40, 0, 100, 0, 4, 31029, 0, 0, 45, 1, 1, 0, 0, 0, 0, 10, @CGUID+0, 31030, 0, 0, 0, 0, 0, 'Possessed Vardmadra - On Reached WP4 - Set Data Balargarde Elite'),
 (31029, 0, 2, 3, 61, 0, 100, 0, 0, 0, 0, 0, 45, 1, 1, 0, 0, 0, 0, 10, @CGUID+1, 31030, 0, 0, 0, 0, 0, 'Possessed Vardmadra - On Reached WP4 - Set Data Balargarde Elite'),
@@ -276,7 +276,7 @@ INSERT INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language
 
 -- Waypoints
 DELETE FROM `waypoints` WHERE `entry` IN(31029,31050,3103001,3103002,3103003,3103004,3103005,3103006,31087,3105000,31083,3108300,3102900);
-INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES
+INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `position_z`, `point_comment`) VALUES 
 (31029, 1, 7119.714 , 4305.82 , 883.7371, 'Possessed Vardmadra'),
 (31029, 2, 7119.045 , 4306.563 , 883.7371, 'Possessed Vardmadra'),
 (31029, 3, 7094.592 , 4326.246 , 879.7935, 'Possessed Vardmadra'),
@@ -329,8 +329,8 @@ INSERT INTO `waypoints` (`entry`, `pointid`, `position_x`, `position_y`, `positi
 (3103006, 6, 7018.119 ,4279.629 ,875.7885, 'Balargarde Elite Path 6'),
 (3103006, 7, 7067.475 ,4300.513 ,892.5076, 'Balargarde Elite Path 6'),
 (3103006, 8, 7067.475 ,4300.513 ,892.5076, 'Balargarde Elite Path 6'),
-(31083, 1, 7092.936, 4343.906, 871.9753, 'The Lich King'),
-(31083, 2, 7094.104, 4331.222, 871.5023, 'The Lich King'),
+(31083, 1, 7092.936, 4343.906, 871.9753, 'The Lich King'), 
+(31083, 2, 7094.104, 4331.222, 871.5023, 'The Lich King'), 
 (31083, 3, 7092.936, 4343.906, 871.9331, 'The Lich King'),
-(31083, 4, 7088.768, 4385.59, 872.3639, 'The Lich King'),
+(31083, 4, 7088.768, 4385.59, 872.3639, 'The Lich King'), 
 (3108300, 1, 7091.374, 4344.362, 871.9679, 'The Lich King Path 2');

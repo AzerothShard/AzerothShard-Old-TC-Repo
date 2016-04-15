@@ -244,9 +244,9 @@ INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_
 (@entry11*100+9, 9, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 3, 0, 25039, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Orc commoner - random action list - Morph '),
 (@entry11*100+10, 9, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 3, 0, 25050, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Orc commoner - random action list - Morph'),
 (@entry11, 0, 19, 0, 11, 0, 100, 0, 0, 0, 0, 0, 3, 25875, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Orc  commoner - On respawn - Morph'); -- Orc midsummer
-
+ 
 DELETE FROM `conditions` WHERE `SourceTypeOrReferenceId`=22 AND `SourceEntry` IN (20102,18927,19177,19169,19175,19171,19172,19176,19178,19173,19148) AND `SourceGroup` >13;
-INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorType`, `ErrorTextId`, `ScriptName`, `Comment`) VALUES
+INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorType`, `ErrorTextId`, `ScriptName`, `Comment`) VALUES 
 (22, 14, 19148, 0, 0, 12, 1, 2, 0, 0, 0, 0, 0, '', 'Commoner - Winter Veil must be active'),
 (22, 14, 20102, 0, 0, 12, 1, 2, 0, 0, 0, 0, 0, '', 'Commoner - Winter Veil must be active'),
 (22, 14, 18927, 0, 0, 12, 1, 2, 0, 0, 0, 0, 0, '', 'Commoner - Winter Veil must be active'),

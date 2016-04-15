@@ -1,4 +1,4 @@
---
+-- 
 -- Pustulating Horror SAI
 SET @ENTRY := 10404;
 UPDATE `creature_template` SET `AIName`="SmartAI" WHERE `entry`=@ENTRY;

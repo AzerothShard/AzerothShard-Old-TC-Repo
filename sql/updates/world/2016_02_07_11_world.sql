@@ -1,4 +1,4 @@
---
+-- 
 -- Razorthorn Ravager SAI
 SET @ENTRY := 24922;
 UPDATE `creature_template` SET `AIName`="SmartAI" WHERE `entry`=@ENTRY;

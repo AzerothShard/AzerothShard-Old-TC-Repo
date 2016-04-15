@@ -1,13 +1,13 @@
 --
 SET @guid:=134881;
 DELETE FROM `creature` WHERE `guid` BETWEEN @guid+0 AND @guid+53;
-INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `VerifiedBuild`) VALUES
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `VerifiedBuild`) VALUES 
 (@guid+0, 18927, 571, 0, 0, 1, 1, 18800, 0, 5740.71, 686.122, 643.896, 3.82227, 120, 0, 0, 1, 0, 0, 0, 0, 0, 0),
 (@guid+1, 18927, 571, 0, 0, 1, 1, 18801, 0, 5739.36, 684.622, 644.191, 0.872665, 120, 0, 0, 1, 0, 0, 0, 0, 0, 0),
 (@guid+2, 18927, 571, 0, 0, 1, 1, 18800, 0, 5664.31, 666.273, 652.064, 1.39626, 120, 0, 0, 1, 0, 0, 0, 0, 0, 0),
 (@guid+3, 18927, 571, 0, 0, 1, 1, 18801, 0, 5664.37, 668.047, 652.051, 4.90438, 120, 0, 0, 1, 0, 0, 0, 0, 0, 0),
-(@guid+4, 18927, 0, 0, 0, 1, 1, 18800, 0, -8364.87207, 617.860, 95.345, 2.580013, 120, 0, 0, 1, 0, 0, 0, 0, 0, 0),
-(@guid+5, 18927, 0, 0, 0, 1, 1, 18801, 0, -8367.4511, 619.1992, 95.2811, 5.804225, 120, 0, 0, 1, 0, 0, 0, 0, 0, 0),
+(@guid+4, 18927, 0, 0, 0, 1, 1, 18800, 0, -8364.87207, 617.860, 95.345, 2.580013, 120, 0, 0, 1, 0, 0, 0, 0, 0, 0), 
+(@guid+5, 18927, 0, 0, 0, 1, 1, 18801, 0, -8367.4511, 619.1992, 95.2811, 5.804225, 120, 0, 0, 1, 0, 0, 0, 0, 0, 0), 
 (@guid+6, 19169, 530, 0, 0, 1, 1, 18785, 0, 9375.07, -7157.06, 9.25588, 1.6057, 5, 0, 0, 42, 0, 0, 0, 0, 0, 0),
 (@guid+7, 19169, 530, 0, 0, 1, 1, 18793, 0, 9374.67, -7155.09, 9.33675, 4.95674, 5, 0, 0, 42, 0, 0, 0, 0, 0, 0),
 (@guid+8, 19169, 530, 0, 0, 1, 1, 18785, 0, 9689.33, -7345.39, 11.9144, 4.20624, 180, 0, 0, 42, 0, 0, 0, 0, 0, 0),

@@ -121,7 +121,7 @@ INSERT INTO `game_event_gameobject` SELECT @Event, gameobject.guid FROM `gameobj
 
 -- Add missing lunar spawns
 DELETE FROM `creature` WHERE `guid` BETWEEN @CGUID+0 AND @CGUID+17;
-INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `curhealth`) VALUES
+INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `curhealth`) VALUES 
 (@CGUID+0 , 15892, 530, -1781.75, 5438.715, -12.34481, 0.2617994, 120, 0), -- 15892 (Area: 3703)
 (@CGUID+1 , 15892, 530, -1775.563, 5444.455, -12.34481, 4.223697, 120, 0), -- 15892 (Area: 3703)
 (@CGUID+2 , 15892, 530, -1773.548, 5436.28, -12.3448, 2.495821, 120, 0), -- 15892 (Area: 3703)

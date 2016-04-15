@@ -1,4 +1,4 @@
---
+-- 
 -- Knockbackimmunity Cleanup
 UPDATE `creature_template` SET `flags_extra`=`flags_extra`|0x40000000 WHERE `entry` IN (
 -- npc_kinetic_bomb

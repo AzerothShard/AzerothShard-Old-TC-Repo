@@ -13,7 +13,7 @@ INSERT INTO `game_event_gameobject` SELECT @Event, gameobject.guid FROM `gameobj
 
 -- Add spawns Pat's Snowcloud Guy & Wonderform Operator <Smokywood Pastures>
 DELETE FROM `creature` WHERE `guid` BETWEEN @CGUID+0 AND @CGUID+10;
-INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `curhealth`) VALUES
+INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `curhealth`) VALUES 
 (@CGUID+0, 15730, 0, 2051.343, 272.4555, 57.25123, 0, 120, 0), -- 15730 (Area: 159) (Auras: 26000 - 26000)
 (@CGUID+1, 15730, 0, 2051.359, 272.4567, 57.25214, 0, 120, 0), -- 15730 (Area: 159) (Auras: 26000 - 26000)
 (@CGUID+2, 15730, 0, -5049.26, -818.5426, 495.3753, 0, 120, 0), -- 15730 (Area: 809) (Auras: 26000 - 26000)

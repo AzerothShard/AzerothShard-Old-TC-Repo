@@ -110,7 +110,7 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`) VALUES
 
 UPDATE `creature_template` SET `AIName` = 'SmartAI', `ScriptName` = '' WHERE `entry` = 18725;
 
--- Condition: On gossip menu click, if item exists, perform linked action
+-- Condition: On gossip menu click, if item exists, perform linked action 
 -- Condition: On gossip menu click, if item exists, perform linked action
 DELETE FROM `conditions` WHERE `SourceTypeOrReferenceId`IN (14, 15) AND `SourceGroup` = 7959;
 INSERT INTO `conditions` (`SourceTypeOrReferenceId`,`SourceGroup`,`SourceEntry`,`SourceId`,`ElseGroup`,`ConditionTypeOrReference`,`ConditionTarget`,`ConditionValue1`,`ConditionValue2`,`ConditionValue3`,`NegativeCondition`,`ErrorTextId`,`ScriptName`,`Comment`) VALUES

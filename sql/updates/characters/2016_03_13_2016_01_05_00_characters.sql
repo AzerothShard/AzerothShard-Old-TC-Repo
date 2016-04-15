@@ -7,7 +7,7 @@ ALTER TABLE `characters`
   ADD `bankSlots` tinyint(3) unsigned NOT NULL DEFAULT '0' AFTER `facialStyle`,
   ADD `restState` tinyint(3) unsigned NOT NULL DEFAULT '0' AFTER `bankSlots`;
 
-UPDATE `characters` SET
+UPDATE `characters` SET 
   `skin`=`playerBytes`&0xFF,
   `face`=(`playerBytes`>>8)&0xFF,
   `hairStyle`=(`playerBytes`>>16)&0xFF,

@@ -4,7 +4,7 @@ DELETE FROM `creature` WHERE `guid` IN (97259, 97261, 97258, 97257, 97256, 97255
 -- Respawn all spawns
 SET @CGUID:=134849;
 DELETE FROM `creature` WHERE `guid` BETWEEN @CGUID+0 AND @CGUID+31;
-INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `curhealth`) VALUES
+INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `curhealth`) VALUES 
 (@CGUID+0 , 27284, 571, 3970.129, -831.1373, 123.1972, 1.419617, 120, 10, 0), -- 27284 (Area: 4177) (possible waypoints or random movement)
 (@CGUID+1 , 27284, 571, 3892.15, -898.545, 116.7031, 4.747295, 120, 0, 0), -- 27284 (Area: 0) (Auras: 51307 - 51307)
 (@CGUID+2 , 27284, 571, 3877.338, -886.6799, 119.6563, 5.410521, 120, 0, 0), -- 27284 (Area: 0) (Auras: 51307 - 51307)
@@ -38,7 +38,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `positi
 (@CGUID+30, 27401, 571, 3961.272, -872.5833, 104.2002, 2.95032, 120, 0, 0), -- 27401 (Area: 0) (Auras: )
 (@CGUID+31, 27401, 571, 3912.686, -865.0364, 120.8479, 6.199958, 120, 0, 0); -- 27401 (Area: 0) (Auras: )
 
--- Pathing for Risen Wintergarde Defender Entry: 27284 'TDB FORMAT'
+-- Pathing for Risen Wintergarde Defender Entry: 27284 'TDB FORMAT' 
 SET @NPC := 134849;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=3962.255,`position_y`=-845.7626,`position_z`=120.7226 WHERE `guid`=@NPC;
@@ -77,7 +77,7 @@ INSERT INTO `waypoint_data` (`id`,`point`,`position_x`,`position_y`,`position_z`
 (@PATH,29,3946.491,-852.2074,122.719,0,0,0,0,100,0), -- 17:09:07
 (@PATH,30,3954.914,-848.747,121.6653,0,0,0,0,100,0); -- 17:09:13
 
--- Pathing for Risen Wintergarde Defender Entry: 27284 'TDB FORMAT'
+-- Pathing for Risen Wintergarde Defender Entry: 27284 'TDB FORMAT' 
 SET @NPC := 134854;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=4008.271,`position_y`=-870.0803,`position_z`=117.5745 WHERE `guid`=@NPC;
@@ -106,7 +106,7 @@ INSERT INTO `waypoint_data` (`id`,`point`,`position_x`,`position_y`,`position_z`
 (@PATH,19,4020.757,-848.9363,117.5502,0,0,0,0,100,0), -- 16:59:55
 (@PATH,20,4010.505,-867.1548,117.3328,0,0,0,0,100,0); -- 17:00:03
 
--- Pathing for Risen Wintergarde Defender Entry: 27284 'TDB FORMAT'
+-- Pathing for Risen Wintergarde Defender Entry: 27284 'TDB FORMAT' 
 SET @NPC := 134855;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=3998.09,`position_y`=-941.3831,`position_z`=105.5378 WHERE `guid`=@NPC;
@@ -130,7 +130,7 @@ INSERT INTO `waypoint_data` (`id`,`point`,`position_x`,`position_y`,`position_z`
 (@PATH,14,3981.241,-911.3746,104.0392,0,0,0,0,100,0), -- 16:58:38
 (@PATH,15,3998.09,-941.3831,105.5378,0,0,0,0,100,0); -- 16:59:21
 
--- Pathing for Risen Wintergarde Defender Entry: 27284 'TDB FORMAT'
+-- Pathing for Risen Wintergarde Defender Entry: 27284 'TDB FORMAT' 
 SET @NPC := 134852;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=3954.649,`position_y`=-896.4279,`position_z`=104.172 WHERE `guid`=@NPC;
@@ -163,7 +163,7 @@ INSERT INTO `waypoint_data` (`id`,`point`,`position_x`,`position_y`,`position_z`
 (@PATH,23,3953.761,-883.5623,104.9101,0,0,0,0,100,0), -- 16:59:13
 (@PATH,24,3954.511,-894.0623,104.4101,0,0,0,0,100,0); -- 16:59:13
 
--- Pathing for Risen Wintergarde Defender Entry: 27284 'TDB FORMAT'
+-- Pathing for Risen Wintergarde Defender Entry: 27284 'TDB FORMAT' 
 SET @NPC := 134853;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=4070.011,`position_y`=-911.9304,`position_z`=115.397 WHERE `guid`=@NPC;

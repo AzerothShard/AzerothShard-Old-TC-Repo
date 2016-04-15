@@ -3,7 +3,7 @@ UPDATE `creature_template_addon` SET `auras`='39579 37509' WHERE  `entry`=22889;
 -- Update aura for Phantasmal Lash
 UPDATE `creature_template_addon` SET `auras`='34427' WHERE  `entry`=22902;
 
--- Pathing for Moonglade Warden Entry: 11822 'TDB FORMAT'
+-- Pathing for Moonglade Warden Entry: 11822 'TDB FORMAT' 
 SET @NPC := 42393;
 SET @PATH := @NPC * 10;
 UPDATE `creature` SET `spawndist`=0,`MovementType`=2,`position_x`=7546.649,`position_y`=-2901.733,`position_z`=462.5362 WHERE `guid`=@NPC;
