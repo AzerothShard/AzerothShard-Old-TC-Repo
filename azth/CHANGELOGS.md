@@ -5,15 +5,31 @@ Our Milestones refer to a specific state of the entire project that includes bot
 A special thank you to all our Testers, GM and the whole staff that costantly helps us to keep quality and stability.
 
 ## < UNDER WORKING >  [Following changes are mostly available on our development realms]
+* {GAME_SERVER} fixed point reset bug for arena 1vs1 in some cases [ Yehonal ]
+* {GAME_SERVER} Implemented Dancing Rune Weapon [ Sceicco ]
+* {GAME_SERVER} Allow weapon switching during Bladestorm [ Sceicco ]
+* {GAME_SERVER} fix Cyclone vs Bladestorm [ Sceicco ]
+* {GAME_SERVER} Auction house bot configuration under-working
+* {GAME_SERVER} Improvements to Arena duels
+* {GAME_SERVER} Re-importing old custom AzerothShard pve/pvp/rpg system from Mangos repository [Yehonal]
+* {GAME_SERVER} Fix Felhunter Spell-Lock [ Sceicco ]
+* {WEB_SERVER} Pve Stats web application [ Helias ]
+
+
+## Milestone: 0.4 [ 2016, March - Avril 15 ]
+* {GAME_SERVER} dynamic exp command fix [ Kepler & Yehonal ]
 * {GAME_SERVER} Fix for immune mechanic and evade problem for Halion [ MadAgos ]
 * {GAME_SERVER} first version of working 1vs1 Arena ( without removing 5vs5 ) [ Yehonal & MadAgos ]
-* {GAME_SERVER} dynamic exp command fix [ Kepler ]
-* {GAME_SERVER} TOC5 Fix [ Tiuz ]
-* {GAME_SERVER} Fix for cross-faction on certain buggy cases
+* {GAME_SERVER} Fix for cross-faction on certain buggy cases [ Yehonal ]
 * {GAME_SERVER} transmorg Set vendor & Emblem of Triumph ( with honor ) vendor [ Kepler ]
-* {WEB_SERVER} Pve Stats web application [ Helias ]
+* {GAME_SERVER} TOC5 Fix [ Tiuz & Yehonal ]
+* {GAME_SERVER} Fix Nefarian flight and buff [ Yehonal ]
+* {GAME_SERVER} Fixed maxskill command [ Kepler ]
+* {GAME_SERVER} Various other minor improvement and fixes to features, stability and security
 * {WEB_SERVER} Developing intranet for staff [ Yehonal ]
+* {WEB_SERVER} Updated and improved website and forum [ Yehonal ]
 * {WEB_SERVER} Working on web browser version of wowclient [ Yehonal ]
+* {WEB_SERVER} Implemented online user map [ Helias ]
 
 ## Milestone: 0.3 [ 2016 , January - March ]
 * {GAME_SERVER} Various fixes to Ulduar [ MadAgos ]
@@ -24,7 +40,7 @@ A special thank you to all our Testers, GM and the whole staff that costantly he
 * {GAME_SERVER} imported arena 1vs1. [ Tiuz ]
 * {GAME_SERVER} imported transmorg. [ Tiuz ]
 * {GAME_SERVER} valkyr lich king fix [ MadAgos ]
-* {GAME_SERVER} writed sql for Azeroth Shard easter event [ Gargarenis ]
+* {GAME_SERVER} written sql for Azeroth Shard easter event [ Gargarenis ]
 * {GAME_SERVER} various database fixes to quests and creatures [ Gargarenis ]
 * {GAME_SERVER} Other minor stability / feature fixes [ Multiple Authors ]
 * {GAME_SERVER} Sync with trinitycore [ Shin ]
@@ -42,13 +58,13 @@ A special thank you to all our Testers, GM and the whole staff that costantly he
 * {GAME_SERVER} various database fixes to quests and creatures [ Gargarenis ]
 * {GAME_SERVER} Other minor stability / feature fixes [ Multiple Authors ]
 * {GAME_SERVER} Sync with trinitycore [ Shin ]
-* {GAME_ADDON} Rewrited dump addon for wotlk, to work under cataclysm client [ Yehonal ]
+* {GAME_ADDON} Rewritten dump addon for wotlk, to work under cataclysm client [ Yehonal ]
 * {WEB_SERVER} Implemented chardump viewer [ Helias ]
 * {WEB_SERVER} Migrated to new forum platform [ Yehonal ]
 * {WEB_SERVER} New site theme [ Yehonal ]
 * {WEB_SERVER} Implemented instant80 system [ Yehonal ]
 * {WEB_SERVER} Migrated from shared to dedicated server for our website [ Yehonal ]
-* {WEB_SERVER} Rewrited and fixed porting system [ Yehonal ]
+* {WEB_SERVER} Rewritten and fixed porting system [ Yehonal ]
 
 ## Milestone: 0.1 Beta [ 2015 , August - October ]
 * {GAME_SERVER} Server migration on cloud server [ Yehonal ]
