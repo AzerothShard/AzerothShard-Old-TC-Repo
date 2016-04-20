@@ -14,14 +14,17 @@ A special thank you to all our Testers, GM and the whole staff that costantly he
 * {GAME_SERVER} Prototype for recruitable/enemy npc bots [ Yehonal & Gargarensis ]
 * {GAME_SERVER} Auction house bot configuration under-working [ Gargarensis ]
 * {GAME_SERVER} Re-importing old custom AzerothShard pve/pvp/rpg system from Mangos repository [ Yehonal ]
+* {GAME_SERVER} New NPC: Shadow of Sceicco (Arena spectator) with downloadable Spectator Client Addon  [Sceicco]
 * {GAME_SERVER} Improvements to Arena duels
+* {GAME_SERVER} Fixing latest transmorg issues [ Yehonal ]
+* {GAME_SERVER} Make Bang a Gong! quest completable with Achievement, title and mount [ Yehonal ]
 * {WEB_SERVER} Pve Stats web application [ Helias ]
 * {WEB_SERVER} Improvements to site Catalogue [ Yehonal ]
 * {VARIOUS} Game Application Launcher with usefull features [ Gargarensis & Yehonal ]
 
 # Milestone: 0.4.5 [ 2016, Avril 15 - Avril 20 ]
+* {GAME_SERVER} RBG now allows you to join Warsong Gulch, Arathi Basin and Eye of The Storm. Sota, Alterac and Isle of Conquest are now available only via direct join [Yehonal]
 * {GAME_SERVER} Some fixes to cross-faction BG ( still cosmetic issues in panel, but it's perfectly doable now ) [Yehonal]
-* {GAME_SERVER} New NPC: Shadow of Sceicco (Arena spectator) with downloadable Spectator Client Addon  [Sceicco]
 * {GAME_SERVER} Fix interrupt on Arcane Missiles [Sceicco]
 * {GAME_SERVER} Fix combat mechanic activation ( avoid in combat on some spells e.g slice and dice) [Sceicco]
 * {GAME_SERVER} Fix Tidal Force [Sceicco]
@@ -29,7 +32,7 @@ A special thank you to all our Testers, GM and the whole staff that costantly he
 * {GAME_SERVER} Fix size of exotic pets [Sceicco]
 * {GAME_SERVER} Fixed various issues of spellreflect on some secondary spell effects (e.g. shadowflame stun) [Sceicco]
 * {GAME_SERVER} Fix call of the wild (hunter) must have effect only on owner and pet [Sceicco]
-* {GAME_SERVER} Minor fixes to a Kharazan [Sceicco]
+* {GAME_SERVER} Minor fixes to Kharazan [Sceicco]
 * {GAME_SERVER} Fix Shadowmeld (rogue) [Sceicco]
 * {GAME_SERVER} Some fixes on evade problem [Sceicco]
 * {GAME_SERVER} Fix to various proc (Inspiration on prayer of mending, Fel Armor, trinkets ulduar and other spells) [Sceicco]
@@ -38,6 +41,7 @@ A special thank you to all our Testers, GM and the whole staff that costantly he
 * {GAME_SERVER} Allow weapon switching during Bladestorm [ Sceicco ]
 * {GAME_SERVER} fix Cyclone vs Bladestorm [ Sceicco ]
 * {GAME_SERVER} Fix Felhunter Spell-Lock [ Sceicco ]
+* {WEB_SERVER} Implemented web calendar for events [ Yehonal ]
 
 
 ## Milestone: 0.4 [ 2016, March - Avril 15 ]
