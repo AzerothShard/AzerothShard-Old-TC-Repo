@@ -5,8 +5,23 @@ Our Milestones refer to a specific state of the entire project that includes bot
 A special thank you to all our Testers, GM and the whole staff that costantly helps us to keep quality and stability.
 
 ## < UNDER WORKING >  [Following changes are mostly available on our development realms]
+* {GAME_SERVER} New event PVE: The Ashbringer (@ Scarlet Monastery) [ Sceicco ]
+* {GAME_SERVER} Thorim under working [MadAgos]
+* {GAME_SERVER} Some improvements to cross-faction party for instances and out-world [ Kepler ]
+* {GAME_SERVER} Implemented Dancing Rune Weapon [ Sceicco ]
+* {GAME_SERVER} Basic system for Azeroth Adventure [MadAgos]
+* {GAME_SERVER} First version of our Azeroth SmartStone [ Yehonal & Gargarensis ]
+* {GAME_SERVER} Prototype for recruitable/enemy npc bots [ Yehonal & Gargarensis ]
+* {GAME_SERVER} Auction house bot configuration under-working [ Gargarensis ]
+* {GAME_SERVER} Re-importing old custom AzerothShard pve/pvp/rpg system from Mangos repository [ Yehonal ]
+* {GAME_SERVER} Improvements to Arena duels
+* {WEB_SERVER} Pve Stats web application [ Helias ]
+* {WEB_SERVER} Improvements to site Catalogue [ Yehonal ]
+* {VARIOUS} Game Application Launcher with usefull features [ Gargarensis & Yehonal ]
+
+# Milestone: 0.4.5 [ 2016, Avril 15 - Avril 20 ]
+* {GAME_SERVER} Some fixes to cross-faction BG ( still cosmetic issues in panel, but it's perfectly doable now ) [Yehonal]
 * {GAME_SERVER} New NPC: Shadow of Sceicco (Arena spectator) with downloadable Spectator Client Addon  [Sceicco]
-* {GAME_SERVER} New event PVE: The Ashbringer (@ Scarlet Monastery) [Sceicco]
 * {GAME_SERVER} Fix interrupt on Arcane Missiles [Sceicco]
 * {GAME_SERVER} Fix combat mechanic activation ( avoid in combat on some spells e.g slice and dice) [Sceicco]
 * {GAME_SERVER} Fix Tidal Force [Sceicco]
@@ -20,14 +35,9 @@ A special thank you to all our Testers, GM and the whole staff that costantly he
 * {GAME_SERVER} Fix to various proc (Inspiration on prayer of mending, Fel Armor, trinkets ulduar and other spells) [Sceicco]
 * {GAME_SERVER} Fix Spell Lock (warlock) [Sceicco]
 * {GAME_SERVER} fixed point reset bug for arena 1vs1 in some cases [ Yehonal ]
-* {GAME_SERVER} Implemented Dancing Rune Weapon [ Sceicco ]
 * {GAME_SERVER} Allow weapon switching during Bladestorm [ Sceicco ]
 * {GAME_SERVER} fix Cyclone vs Bladestorm [ Sceicco ]
-* {GAME_SERVER} Auction house bot configuration under-working
-* {GAME_SERVER} Improvements to Arena duels
-* {GAME_SERVER} Re-importing old custom AzerothShard pve/pvp/rpg system from Mangos repository [Yehonal]
 * {GAME_SERVER} Fix Felhunter Spell-Lock [ Sceicco ]
-* {WEB_SERVER} Pve Stats web application [ Helias ]
 
 
 ## Milestone: 0.4 [ 2016, March - Avril 15 ]
