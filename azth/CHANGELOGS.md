@@ -39,6 +39,7 @@ A special thank you to all our Testers, GM and the whole staff that costantly he
 * {GAME_SERVER} Fixing latest transmorg issues [ Yehonal ]
 * {WEB_SERVER} improved thanks & reputation
 * {WEB_SERVER} introduced discord in-game realm & gdr channel
+* {VARIOUS} Implemented merge system for trilogy-wotlk [ Sceicco ]
 * {VARIOUS} Introduced extra-database and mail-system [ Sceicco ]
 
 # Milestone: 0.4.5 [ 2016, Avril 15 - Avril 20 ]
