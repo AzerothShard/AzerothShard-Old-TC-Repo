@@ -42,7 +42,7 @@ A special thank you to all our Testers, GM and the whole staff that costantly he
 * {VARIOUS} Implemented merge system for trilogy-wotlk [ Sceicco ]
 * {VARIOUS} Introduced extra-database and mail-system [ Sceicco ]
 
-# Milestone: 0.4.5 [ 2016, Avril 15 - Avril 20 ]
+## Milestone: 0.4.5 [ 2016, Avril 15 - Avril 20 ]
 * {GAME_SERVER} RBG now allows you to join Warsong Gulch, Arathi Basin and Eye of The Storm. Sota, Alterac and Isle of Conquest are now available only via direct join [Yehonal]
 * {GAME_SERVER} Some fixes to cross-faction BG ( still cosmetic issues in panel, but it's perfectly doable now ) [Yehonal]
 * {GAME_SERVER} Fix interrupt on Arcane Missiles [Sceicco]
